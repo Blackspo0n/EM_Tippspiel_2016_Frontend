@@ -1,33 +1,18 @@
 <?php
 
 session_start();
-error_reporting(-1);
+error_reporting(E_ERROR | E_WARNING);
+
 ini_set('display_errors', '1');
 
-require 'classes/libs/smarty-3.1.29/libs/Smarty.class.php';
-require_once 'classes/SmartyInstance.php';
+require __DIR__ . DIRECTORY_SEPARATOR . 'Config.php';
+require_once __DIR__  . DS . 'Application.php';
 
-$mario = new Smarty();
-$mario->setTemplateDir('theme');
-$mario->setCompileDir('theme_compile');
-
-$infoFromMySql = mysql_connect('guessandwin.gamer-point.com', 'guessandwinTeam', 'Tdrl85_6');
-
-if ($infoFromMySql) {
-    mysql_select_db('em2016');
-    $mario->assign('yolo', 'Erfolgreich zur Datenbank verbunden.');
-} else {
-    $mario->assign('yolo', 'Verbindung fehlgeschlagen.');
+if(!isset($_GET['module'])) {
+    $_GET['module'] = 'main';
 }
 
-$result = mysql_query('SELECT * from spiele');
+Application::Initialize();
+Application::Run($_GET['module']);
+Application::Flush();
 
-if ($result) {
-    while ($row = mysql_fetch_assoc($result)) {
-        var_dump($row);
-    }
-} else {
-    var_dump(mysql_error());
-}
-
-$mario->display('index.tpl');

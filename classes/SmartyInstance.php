@@ -8,16 +8,17 @@ class SmartyInstance
         $this->smarty = new Smarty();
 
         $this->smarty->assign("base", "/" . basename(ROOT_DIR));
-        $this->smarty->assign("http_dir", "/" . basename(ROOT_DIR));
 
-        $this->smarty->setTemplateDir(THEME_DIR . '/' . THEME . '/maintemplates/');
-        $this->smarty->setCompileDir(TMP_PATCH . '/');
+        $this->smarty->setTemplateDir(ROOT_DIR . DS . 'theme');
+        $this->smarty->setCompileDir(ROOT_DIR . DS . 'theme_compile');
     }
 
     static public function getInstance() {
         static $instance;
 
-        if($instance === null) $instance = new self();
+        if($instance === null) {
+            $instance = new self();
+        }
 
         return $instance;
     }

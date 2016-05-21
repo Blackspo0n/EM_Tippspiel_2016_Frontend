@@ -14,6 +14,7 @@ class Config
         'password' => '',
         'database' => 'em2016'
     ];
-
-    
 }
+
+define('ROOT_DIR', __DIR__);
+define('DS', DIRECTORY_SEPARATOR);

@@ -9,13 +9,20 @@
 
 class FrontController
 {
+    public $activeController;
+    public $defaultCobntroller = "main";
+
     public function __construct() {
 
     }
 
-    public function loadModule() {
-
+    public function ControllerExists($controller) {
+        if(file_exists(ROOT_DIR . DS . 'classes' . DS . 'controller' . DS . $controller . '.php')) return true;
+        return false;
     }
 
-    
+    public function runController($controller) {
+        $this->activeController = new $controller();
+        
+    }
 }

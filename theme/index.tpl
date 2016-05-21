@@ -22,9 +22,9 @@
         </div>
     </div>
     <div class="content">
-        Hallo Mama, ich hab einen body gemacht der hier content heißt.<br/>
-        Und Entern kann ich auch schon.<br/>
-        {$yolo}
+        {* Hier werden die Sub-templates geladen *}
+        {include file=$contentfile|default:"main.tpl"}
+
     </div>
 </div>
 <div class="footer">
