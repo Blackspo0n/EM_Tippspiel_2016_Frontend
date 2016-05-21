@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="theme/img/favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>EM 2016 - Tippspiel WHS</title>
+    <link href="theme/style/main.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="header">
+        <div class="menu">
+            <ul>
+                <li><a href="index.php?module=home">Home</a></li>
+                <li><a href="index.php?module=login">Login</a></li>
+                <li><a href="index.php?module=register">Registrieren</a></li>
+            </ul>
+        </div>
+        <div class="logo">
+        </div>
+    </div>
+    <div class="content">
+        Hallo Mama, ich hab einen body gemacht der hier content heißt.<br/>
+        Und Entern kann ich auch schon.<br/>
+        {$yolo}
+    </div>
+</div>
+<div class="footer">
+    <div id="links"></div>
+    <div id="rechts" align="right">
+        <?php echo date("d.m.Y", time()); ?>
+    </div>
+    <div id="midd">
+        &copy;opyright MKE, PMI, JMO | Westf&auml;lische Hochschule | Standort Bocholt
+    </div>
+</div>
+
+
+</body>
+</html>

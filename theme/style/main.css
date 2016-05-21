@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-size: cover;
+    background: black url('../img/background.jpg') no-repeat center center;
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "Calibri Light";
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+}
+.menu {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    font-size: 24px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+.menu a:hover {
+    color: green;
+    font-weight: bold;
+}
+
+.menu ul {
+    margin: 0;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    list-style: none;
+}
+
+.menu li:first-child:before {
+    margin-right: 0;
+    content: '' !important;
+}
+
+.menu li:before {
+    margin-right: 5px;
+    content: '|';
+}
+
+.menu li:after {
+    margin-left: 5px;
+}
+
+.logo {
+    background: url('../img/whsUndEmLogo.png') center center;
+    height: 155px;
+    width: 799px;
+    background-size: 100%;
+    margin: 10px auto;
+}
+
+.content {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#fullScreen {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#links {
+    float: left;
+    margin-left: 10%;
+}
+
+#rechts {
+    float: right;
+    margin-right: 10%;
+}
+
+#midd {
+    margin: 0 11.6%;
+    min-width: 600px;
+    text-align: center;
+}
+
+div.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    visibility: visible;
+    z-index: 200;
+    width: 100%;
+    background-color: green;
+    border-top: 3px #FFF dotted;
+}
