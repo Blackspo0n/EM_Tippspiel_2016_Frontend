@@ -2,6 +2,7 @@
 require_once ROOT_DIR . DS . 'classes' . DS . 'Database.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'SmartyInstance.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'FrontController.php';
+require_once ROOT_DIR . DS . 'classes' . DS . 'IController.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'smarty-3.1.29' . DS . 'libs' . DS .  'Smarty.class.php';
 
 
@@ -56,7 +57,7 @@ class Application
         self::$database->setServerInformation(Config::$databaseSettings['host'], Config::$databaseSettings['user'],
             Config::$databaseSettings['password'] , Config::$databaseSettings['database']
         );
-
+    
         try {
             self::$database->connectToDatabase();
             self::$hasValidDatabaseConnection = true;

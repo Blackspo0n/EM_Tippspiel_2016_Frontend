@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-error_reporting(E_ERROR | E_WARNING);
+error_reporting(E_ERROR);
 
 ini_set('display_errors', '1');
 

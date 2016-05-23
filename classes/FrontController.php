@@ -9,6 +9,9 @@
 
 class FrontController
 {
+    /**
+     * @var IController
+     */
     public $activeController;
     public $defaultCobntroller = "main";
 
@@ -23,6 +26,7 @@ class FrontController
 
     public function runController($controller) {
         $this->activeController = new $controller();
-        
+
+        $this->activeController->Run();
     }
 }
