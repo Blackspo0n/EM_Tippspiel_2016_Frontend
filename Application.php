@@ -82,7 +82,7 @@ class Application
                 self::$frontController->runController($mainModule);
             }
             else {
-                self::$frontController->runController(self::$frontController->defaultCobntroller);
+                self::$frontController->runController(self::$frontController->defaultController);
             }
 
         }

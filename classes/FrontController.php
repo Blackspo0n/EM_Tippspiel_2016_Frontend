@@ -13,7 +13,7 @@ class FrontController
      * @var IController
      */
     public $activeController;
-    public $defaultCobntroller = "main";
+    public $defaultController = "main";
 
     public function __construct() {
 
