@@ -76,7 +76,9 @@ class Application
      */
     public static function Run($mainModule) {
         if(self::$hasValidDatabaseConnection) {
+
             if(self::$frontController->ControllerExists($mainModule)) {
+                echo "true";
                 self::$frontController->runController($mainModule);
             }
             else {
@@ -85,7 +87,6 @@ class Application
 
         }
         else {
-
             self::$frontController->runController("databaseerror");
         }
 

@@ -20,7 +20,7 @@ class FrontController
     }
 
     public function ControllerExists($controller) {
-        if(file_exists(ROOT_DIR . DS . 'classes' . DS . 'controller' . DS . $controller . '.php')) return true;
+        if(file_exists(ROOT_DIR . DS . 'classes' . DS . 'controller' . DS . $controller . '.class.php')) return true;
         return false;
     }
 

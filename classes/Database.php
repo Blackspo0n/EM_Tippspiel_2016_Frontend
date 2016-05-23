@@ -33,17 +33,9 @@ class Database
         if(!$this->hasSetConnectionInfo) {
             throw new Exception("server Informations hasnt been set");
         }
-        $mysqltmp = mysqli_connect($this->host, $this->user, $this->password);
-        
+        $mysqltmp = new mysqli($this->host, $this->user, $this->password, $this->database);
         if(!$mysqltmp) {
             throw new Exception('Unable to connect to database. Error:' . mysqli_error($this->databaseLink));
-        }
-
-        $this->databaseLink = $mysqltmp;
-
-        if(!mysqli_select_db($this->database, $this->databaseLink)) {
-
-            throw new Exception('Unable to switch to database. Error:' . mysqli_error($this->databaseLink));
         }
     }
 }

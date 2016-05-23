@@ -9,9 +9,9 @@
 class Config
 {
     public static $databaseSettings = [
-        'host' => 'localhost',
-        'user' => 'root',
-        'password' => '',
+        'host' => 'guessandwin.gamer-point.com',
+        'user' => 'guessandwinTeam',
+        'password' => 'Tdrl85_6',
         'database' => 'em2016'
     ];
 }
