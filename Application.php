@@ -77,8 +77,7 @@ class Application
     public static function Run($mainModule) {
         if(self::$hasValidDatabaseConnection) {
 
-            if(self::$frontController->ControllerExists($mainModule)) {
-                echo "true";
+            if(self::$frontController->ControllerExists($mainModule)) { 
                 self::$frontController->runController($mainModule);
             }
             else {

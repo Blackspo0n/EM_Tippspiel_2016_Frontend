@@ -7,7 +7,7 @@ class main implements IController {
         Application::$smarty->assign('contentfile', 'main.tpl');
     }
 
-    public function Run()
+    public function Run() 
     {
         // TODO: Implement Run() method.
     }
