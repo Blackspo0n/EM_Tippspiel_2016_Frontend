@@ -2,7 +2,7 @@
 
 Dies ist das Repository für die freiwillige Projektarbeit im Fach GWI1.
 
-## Authoren
+## Autoren
 Mario Kellner - mario.kellner@studmail.w-hs.de
 Jan Markus Momper - jan-markus.momper@studmail.w-hs.de
 Philipp Miller - philipp.miller@studmail.w-hs.de
@@ -12,7 +12,7 @@ Philipp Miller - philipp.miller@studmail.w-hs.de
 Die Datei "_Config.tpl.php_" stellt die standard Konfiguration dar. Um das Frontend zu
 nutzen, muss diese in "_Config.php_" umbenannt werden.
 
-### Notwendige konfiguration
+### Notwendige Konfiguration
 In der _Config.php_ müssen mindestens korrekte Logindaten für einen **MySQL-Server**
 hinterlegt werden.
 
