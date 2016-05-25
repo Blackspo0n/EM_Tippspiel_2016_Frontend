@@ -1,20 +1,37 @@
-<h2>Registrieren</h2>
+<h2 style="text-align: center">Registrieren</h2>
 <hr>
 
-<p style="font-size: 18px">
-    Mit diesem Formular könne sich ein Benutzeraccount registrieren. <br />
-    Bitte geben Sie dafür alle nötigen Infórmationen an und drücken Sie anschließend <br />
-    Auf "Registrieren".
+<p style="font-size: 18px; text-align: center">
+    Mit diesem Formular können Sie einen Benutzeraccount registrieren. <br />
+    Bitte geben Sie dafür alle nötigen Informationen an und drücken Sie anschließend <br />
+    auf "Registrieren".
 </p>
 
 <hr>
 <form action="index.php?module=register" method="post">
     <div class="formElements">
         <div class="formLine">
-            <label for="accountname">Nickname:</label><input type="text" id="accountname" name="account[nickname]" >
+            <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzername]" title="Wird zur Anmeldung benötigt.">
+        </div>
+        <div class="formLine">
+            <label for="nickname">Nickname:</label><input type="text" id="nickname" name="account[nickname]" title="Wird in der Tipprunde angezeigt.">
+        </div>
+        <div class="formLine">
+            <label for="password">Passwort:</label><input type="password" id="password" name="account[passwort]" >
+        </div>
+        <div class="formLine">
+            <label for="passwordrepeat">Passwort - Bestätigung:</label><input type="password" id="passwordrepeat" name="account[passwortrepeat]">
         </div>
         <div class="formLine">
             <label for="email">E-Mail:</label><input type="text" id="email" name="account[email]">
+        </div>
+        <div class="formLine">
+            <label for="emailrepeat">E-Mail - Bestätigung:</label><input type="text" id="emailrepeat" name="account[emailrepeat]">
+        </div>
+        <div class="formLine">
+            <label for="show_Email">E-Mail Anzeigen?</label>
+            <input type="hidden" value="0" name="account[show_Email]">
+            <input type="checkbox" value="1" id="show_Email" name="account[show_Email]">
         </div>
     </div>
     <div class="btnLine">
