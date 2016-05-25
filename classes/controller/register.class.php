@@ -16,7 +16,7 @@ class register implements IController
     public function Run()
     {
         if(array_key_exists('account', $_POST)) {
-            $this->AccountRegister();
+            $this->AccountRegistered();
         }
         else {
             $this->RegisterFormular();
@@ -32,7 +32,7 @@ class register implements IController
 
     }
     
-    public function AccountRegister() {
+    public function AccountRegistered() {
         Application::$smarty->assign('contentfile', 'register.success.tpl');
     }
     

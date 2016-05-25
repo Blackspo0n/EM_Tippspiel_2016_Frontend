@@ -2,7 +2,6 @@
 /* CSS Document */
 
 body {
-    background-size: cover;
     background: black url('../img/background.jpg') no-repeat center center;
     height: 100%;
     width: 100%;
@@ -97,7 +96,7 @@ form > div.btnLine {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    padding: 10px;
+    padding: 10px 10px 65px 10px;
 }
 
 #fullScreen {
@@ -132,4 +131,31 @@ div.footer {
     width: 100%;
     background-color: green;
     border-top: 3px #FFF dotted;
+}
+
+.headerguidelines {
+    text-align: center;
+}
+
+.guidelines {
+    margin: 0 auto;
+    width: 800px;
+    font-size: 18px;
+}
+
+.guidelines th {
+    text-align: left;
+}
+
+.guidelines tbody td {
+    border: 1px solid white;
+}
+
+.guidelines td:first-child {
+     width: 100%;
+ }
+
+.guidelines td:last-child {
+    width: 50px;
+    text-align: center;
 }

@@ -16,6 +16,7 @@
                 <li><a href="index.php?module=home">Home</a></li>
                 <li><a href="index.php?module=login">Login</a></li>
                 <li><a href="index.php?module=register">Registrieren</a></li>
+                <li><a href="index.php?module=guidelines">Regelwerk</a></li>
             </ul>
         </div>
         <div class="logo">
@@ -24,7 +25,7 @@
     <div class="content">
         {* Hier werden die Sub-templates geladen *}
         {include file=$contentfile|default:"main.tpl"}
-
+        <hr/>
     </div>
 </div>
 <div class="footer">

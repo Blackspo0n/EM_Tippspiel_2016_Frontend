@@ -1,7 +1,7 @@
 <h2>Registrieren</h2>
 <hr>
 
-<p>
+<p style="font-size: 18px">
     Mit diesem Formular könne sich ein Benutzeraccount registrieren. <br />
     Bitte geben Sie dafür alle nötigen Infórmationen an und drücken Sie anschließend <br />
     Auf "Registrieren".
