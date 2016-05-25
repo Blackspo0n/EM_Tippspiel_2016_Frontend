@@ -6,6 +6,7 @@ Dies ist das Repository für die freiwillige Projektarbeit im Fach GWI1.
 Mario Kellner - mario.kellner@studmail.w-hs.de
 Jan Markus Momper - jan-markus.momper@studmail.w-hs.de
 Philipp Miller - philipp.miller@studmail.w-hs.de
+Mark Friedrich - mark.friedrich@studmail.w-hs.de
 
 ## Konfiguration
 

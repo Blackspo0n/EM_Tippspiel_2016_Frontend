@@ -8,6 +8,9 @@
  */
 class Database
 {
+    /**
+     * @var mysqli
+     */
     public $databaseLink;
     private $hasSetConnectionInfo = false;
     public $user;
@@ -35,7 +38,8 @@ class Database
         }
         $mysqltmp = new mysqli($this->host, $this->user, $this->password, $this->database);
         if(!$mysqltmp) {
-            throw new Exception('Unable to connect to database. Error:' . mysqli_error($this->databaseLink));
+            throw new Exception('Unable to connect to database. Error:' . mysqli_error($mysqltmp));
         }
+        $this->databaseLink = $mysqltmp;
     }
 }

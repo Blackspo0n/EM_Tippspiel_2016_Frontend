@@ -8,7 +8,7 @@
 </p>
 
 <hr>
-<form action="index.php?module=register" method="post">
+<form action="index.php?module=register" method="post" class="registForm">
     <div class="formElements">
         <div class="formLine">
             <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzername]" title="Wird zur Anmeldung benötigt.">

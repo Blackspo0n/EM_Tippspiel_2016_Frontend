@@ -22,6 +22,13 @@
         <div class="logo">
         </div>
     </div>
+    <div class="loginLine">
+        {if $smarty.session.logged eq true}
+            {include file="login.logged.tpl"}
+        {else}
+            {include file="login.line.tpl"}
+        {/if}
+    </div>
     <div class="content">
         {* Hier werden die Sub-templates geladen *}
         {include file=$contentfile|default:"main.tpl"}

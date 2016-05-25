@@ -11,13 +11,16 @@ body {
     padding: 0;
 }
 
-form {
+form.registForm {
     display: table;
     margin: 0 auto;
     width: 600px;
     border-spacing: 5px;
 }
 
+form.loginLine {
+    margin: 0 auto;
+}
 .formElements > div.formLine {
     display: table-row;
 }
@@ -32,7 +35,7 @@ form {
 
     width: 200px;
 }
-form > div.btnLine {
+form.registForm > div.btnLine {
 
     width:100%;
     text-align: center;
@@ -92,16 +95,34 @@ form > div.btnLine {
     margin: 10px auto;
 }
 
-.content {
+.content, .loginLine {
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
+}
+
+.content {
     padding: 10px 10px 65px 10px;
+}
+
+.loginLine {
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+}
+
+.loggedLine {
+    text-align: right;
+    font-size: 12px;
+    color: gainsboro;
+
+}
+.loggedLine a {
+    color: orangered;
 }
 
 #fullScreen {
     position: absolute;
-    left: 0px;
+    left: 0;
     width: 100%;
     margin: 0 auto;
 }
