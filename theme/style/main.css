@@ -7,9 +7,37 @@ body {
     height: 100%;
     width: 100%;
     color: #FFFFFF;
-    font-family: "Calibri Light";
+    font-family: "Calibri Light", sans-serif;
     margin: 0 0 10px 0;
     padding: 0;
+}
+
+form {
+    display: table;
+    margin: 0 auto;
+    width: 600px;
+    border-spacing: 5px;
+}
+
+.formElements > div.formLine {
+    display: table-row;
+}
+
+.formElements > div.formLine * {
+    display: table-cell;
+}
+
+.formElements > div.formLine *:first-child {
+    text-align: right;
+    padding-right: 10px;
+
+    width: 200px;
+}
+form > div.btnLine {
+
+    width:100%;
+    text-align: center;
+
 }
 
 .wrapper {
