@@ -18,8 +18,11 @@ form.registForm {
     border-spacing: 5px;
 }
 
-form.loginLine {
+form.loginForm {
+    font-size: 14px;
+    color: gainsboro;
     margin: 0 auto;
+    text-align: center;
 }
 .formElements > div.formLine {
     display: table-row;

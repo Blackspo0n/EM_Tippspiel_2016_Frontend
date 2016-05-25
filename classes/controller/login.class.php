@@ -17,5 +17,10 @@ class login implements IController
                 Application::$smarty->assign("contentfile", "login.fail.tpl");
             }
         }
+        elseif(array_key_exists("logout", $_GET)) {
+            if(UserHelper::UserLogout()) {
+                header('Location: index.php');
+            }
+        }
     }
 }

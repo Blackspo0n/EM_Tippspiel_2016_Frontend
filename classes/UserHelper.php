@@ -68,6 +68,8 @@ class UserHelper
         }
 
         session_destroy();
+
+        return true;
     }
 
     public static function isUserLogged() {
