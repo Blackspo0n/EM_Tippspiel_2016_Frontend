@@ -1,10 +1,9 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Mario
- * Date: 21.05.2016
- * Time: 11:50
+ * Class Config
+ * 
+ * 
  */
 class Config
 {
@@ -13,6 +12,13 @@ class Config
         'user' => 'guessandwinTeam',
         'password' => '***',
         'database' => 'em2016'
+    ];
+
+    public static $smtpSettings = [
+        'host' => '',
+        'user' => '',
+        'email' => '',
+        'password' => '',
     ];
 }
 

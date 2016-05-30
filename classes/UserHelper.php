@@ -54,7 +54,7 @@ class UserHelper
         $fetch = $result->fetch_assoc();
 
 
-        if($fetch['sessionID'] == $_COOKIE["loginHash"]){
+        if($fetch['sessionID'] === $_COOKIE['loginHash']){
             UserHelper::UserLogin($fetch['nickname'], $fetch['passwort'], false);
         }
 
@@ -64,6 +64,7 @@ class UserHelper
 
     public static function UserLogout() {
         if($_SESSION['userid']) {
+            // invalidate token. It is easier than invalidate the cokies
             Application::$database->databaseLink->query("UPDATE benutzer SET sessionID = '' WHERE benutzerid =" . $_SESSION['userid']);
         }
 
@@ -73,15 +74,79 @@ class UserHelper
     }
 
     public static function isUserLogged() {
-        if(!array_key_exists("logged", $_SESSION)) return false;
+        if(!array_key_exists('logged', $_SESSION)) return false;
 
-        if($_SESSION['logged'] == false) return false;
+        if($_SESSION['logged'] === false) return false;
 
         return true;
 
     }
 
+    /**
+     * Regist a Useraccount
+     *
+     * Regist a useraccount. It only return false if a user allready exists otherwise the function will
+     * regist any user with valid and INVALID data.
+     *
+     * @param $userdata array
+     * @return boolean true registration was successful
+     * @return boolean false a error appear during the registration
+     */
     public static function UserRegister($userdata) {
+        $db = Application::$database->databaseLink;
+
+        $result = $db->query("SELECT benutzerid FROM benutzer WHERE benutzerName = '" . $db->escape_string($userdata['benutzerName']) . "'");
+        if(!$result)  return false;
+
+        $fetch = $result->fetch_assoc();
+
+        if($fetch) return false; // username allready exists
+
+        $result = $db->query("SELECT benutzerid FROM benutzer WHERE email = '" . $db->escape_string($userdata['email']) . "'");
+        if(!$result)  return false;
+
+        $fetch = $result->fetch_assoc();
+
+        if($fetch) return false; // email allready exists
+
+        if(!array_key_exists('IP', $userdata)) {
+            $userdata['IP'] = $_SERVER['REMOTE_ADDR'];
+        }
+
+        $counter = 0;
+        $sql = "INSERT INTO benutzer (";
+        foreach ($userdata as $key => $value)  {
+            $sql .= $db->escape_string($key);
+
+            $counter++;
+            if($counter < count($userdata)) {
+                $sql .= ",";
+            }
+
+        }
+        $sql .= ") VALUES (";
+
+        $counter = 0;
+        foreach ($userdata as $key => $value)  {
+            if($key === 'show_Email') {
+                $sql .= (int)$value;
+            }
+            else {
+                $sql .= "'" . $db->real_escape_string($value) ."'";
+            }
+            $counter++;
+            if($counter < count($userdata)) {
+                $sql .= ",";
+            }
+        }
+
+        $sql .= ')';
+
+        if($db->query($sql)) {
+            return true;
+        }
+
+        return false;
 
     }
 }

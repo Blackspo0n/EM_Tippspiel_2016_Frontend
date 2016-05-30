@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class SmartyInstance
+ *
+ * @method void assign(string $tplvar, mixed $obj);
+ */
 class SmartyInstance
 {
     private $smarty;

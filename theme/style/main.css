@@ -30,6 +30,7 @@ form.loginForm {
 
 .formElements > div.formLine * {
     display: table-cell;
+    padding: 5px;
 }
 
 .formElements > div.formLine *:first-child {
@@ -42,7 +43,9 @@ form.registForm > div.btnLine {
 
     width:100%;
     text-align: center;
-
+}
+form.registForm input[type=text],form.registForm input[type=password] {
+    width:  350px;
 }
 
 .wrapper {

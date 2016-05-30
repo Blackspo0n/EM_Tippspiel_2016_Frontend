@@ -11,10 +11,10 @@
 <form action="index.php?module=register" method="post" class="registForm">
     <div class="formElements">
         <div class="formLine">
-            <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzername]" title="Wird zur Anmeldung benötigt.">
+            <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzerName]" title="Wird zur Anmeldung benötigt." value="{$defaults.benutzerName|default:''}">
         </div>
         <div class="formLine">
-            <label for="nickname">Nickname:</label><input type="text" id="nickname" name="account[nickname]" title="Wird in der Tipprunde angezeigt.">
+            <label for="nickname">Nickname:</label><input type="text" id="nickname" name="account[nickname]" title="Wird in der Tipprunde angezeigt."  value="{$defaults.nickname|default:''}">
         </div>
         <div class="formLine">
             <label for="password">Passwort:</label><input type="password" id="password" name="account[passwort]" >
@@ -23,7 +23,7 @@
             <label for="passwordrepeat">Passwort - Bestätigung:</label><input type="password" id="passwordrepeat" name="account[passwortrepeat]">
         </div>
         <div class="formLine">
-            <label for="email">E-Mail:</label><input type="text" id="email" name="account[email]">
+            <label for="email">E-Mail:</label><input type="text" id="email" name="account[email]"  value="{$defaults.email|default:''}">
         </div>
         <div class="formLine">
             <label for="emailrepeat">E-Mail - Bestätigung:</label><input type="text" id="emailrepeat" name="account[emailrepeat]">

@@ -8,11 +8,10 @@ require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'smarty-3.1.29' . DS
 
 
 /**
- * Class Application Our entrypoint for our OOP orientated website
+ * Class Application our entrypoint for our OOP orientated website
  *
  * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
  * @version 1.0
- *
  */
 class Application
 {
