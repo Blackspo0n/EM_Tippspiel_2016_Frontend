@@ -13,10 +13,11 @@
     <div class="header">
         <div class="menu">
             <ul>
-                <li><a href="index.php?module=home">Home</a></li>
-                <li><a href="index.php?module=login">Login</a></li>
-                <li><a href="index.php?module=register">Registrieren</a></li>
-                <li><a href="index.php?module=guidelines">Regelwerk</a></li>
+                {if $smarty.session.logged eq true}
+                    {include file="header.logged.tpl"}
+                {else}
+                    {include file="header.tpl"}
+                {/if}
             </ul>
         </div>
         <div class="logo">
