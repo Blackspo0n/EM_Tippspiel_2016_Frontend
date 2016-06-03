@@ -12,7 +12,7 @@ class tipinput implements IController
     public function Run()
     {
         $gameData = $this->gameData();
-
+ 
         Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
 
 
