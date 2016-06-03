@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: janos_000
+ * User: JMO
  * Date: 25.05.2016
  * Time: 11:00
  */
