@@ -32,8 +32,10 @@ class tipinput implements IController
 
     public function gameData()
     {
+        $username = $smarty.session.username;
         $db = Application::$database->databaseLink;
 
+        $query = "SELECT * FROM spiele";
         $result = $db->query("SELECT * FROM spiele");
 
         echo "<table>";
