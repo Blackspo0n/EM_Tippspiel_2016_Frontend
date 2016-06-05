@@ -186,3 +186,20 @@ div.footer {
     width: 50px;
     text-align: center;
 }
+
+
+
+
+form.tipinputForm {
+    display: table;
+    margin: 0 auto;
+    width: 600px;
+    border-spacing: 5px;
+}
+
+
+form.tipinputForm > div.btnLine {
+
+    width:100%;
+    text-align: center;
+}
