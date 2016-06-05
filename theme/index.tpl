@@ -39,10 +39,10 @@
 <div class="footer">
     <div id="links"></div>
     <div id="rechts" align="right">
-        <?php echo date("d.m.Y", time()); ?>
+        {$smarty.now|date_format:"%d.%m.%Y"}
     </div>
     <div id="midd">
-        &copy;opyright MKE, PMI, JMO | Westf&auml;lische Hochschule | Standort Bocholt
+        Copyright JMO, MFR, MKE, PMI &copy; 2016 | Westf&auml;lische Hochschule | Standort Bocholt
     </div>
 </div>
 

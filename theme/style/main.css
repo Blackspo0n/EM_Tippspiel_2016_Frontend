@@ -2,7 +2,18 @@
 /* CSS Document */
 
 body {
+    /*
     background: black url('../img/background.jpg') no-repeat center center;
+    height: 100%;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "Calibri Light", sans-serif;
+    margin: 0 0 10px 0;
+    padding: 0;
+    */
+
+    background: black url('../img/WHSTippBack.jpg') no-repeat;
+    background-size: cover;
     height: 100%;
     width: 100%;
     color: #FFFFFF;
@@ -164,18 +175,19 @@ div.footer {
     text-align: center;
 }
 
-.guidelines {
+.guidelines, .rankingTable {
     margin: 0 auto;
     width: 800px;
     font-size: 18px;
 }
 
-.guidelines th {
+.guidelines th, .rankingTable th {
     text-align: left;
 }
 
-.guidelines tbody td {
-    border: 1px solid white;
+.guidelines tbody td, .rankingTable tbody td {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
 }
 
 .guidelines td:first-child {
@@ -185,6 +197,11 @@ div.footer {
 .guidelines td:last-child {
     width: 50px;
     text-align: center;
+}
+
+.dashbordP {
+    font-size: 18px;
+    margin: 0px 20px 0px 20px;
 }
 
 
