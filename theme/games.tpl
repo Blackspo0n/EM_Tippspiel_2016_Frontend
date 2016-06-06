@@ -35,10 +35,10 @@
                 {$grpPhase.datumuhrzeit}
             </td>
             <td style="border-right: 0px;">
-                {$grpPhase.heimmannschaft}
+                {IF strstr($grpPhase.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$grpPhase.heimmannschaft}.png" />{/IF} {$grpPhase.heimmannschaft}
             </td>
             <td>
-                {$grpPhase.gastmannschaft}
+                {IF strstr($grpPhase.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$grpPhase.gastmannschaft|default:"euFlag"}.png" />{/IF} {$grpPhase.gastmannschaft}
             </td>
             <td>
                 {$grpPhase.heimmannschaftende|default:"-"} : {$grpPhase.gastmannschaftende|default:"-"}
@@ -50,7 +50,7 @@
 
 <br />
 <hr />
-<h3 class="h3Games">K.O. - Phase</h3>
+<h3 class="h3Games">Achtelfinale</h3>
 
 <table class="gamesTable">
     <thead>
@@ -74,25 +74,178 @@
     </thead>
 
     <tbody>
-    {foreach from=$KOArray item=KOPhase}
+    {foreach from=$AchtelArray item=Achtelfinale}
         <tr>
             <td>
-                {$KOPhase.spielbezeichnung}
+                {$Achtelfinale.spielbezeichnung}
             </td>
             <td>
-                {$KOPhase.spielort}
+                {$Achtelfinale.spielort}
             </td>
             <td>
-                {$KOPhase.datumuhrzeit}
+                {$Achtelfinale.datumuhrzeit}
             </td>
             <td style="border-right: 0px;">
-                <img class="flags" src="/theme/img/flags/{$KOPhase.heimmannschaft}.png" /> {$KOPhase.heimmannschaft}
+                {IF strstr($Achtelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Achtelfinale.heimmannschaft}.png" />{/IF} {$Achtelfinale.heimmannschaft}
             </td>
             <td>
-                <img class="flags" src="/theme/img/flags/{$KOPhase.gastmannschaft}.png" /> {$KOPhase.gastmannschaft}
+                {IF strstr($Achtelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Achtelfinale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Achtelfinale.gastmannschaft}
             </td>
             <td>
-                {$KOPhase.heimmannschaftende|default:"-"} : {$KOPhase.gastmannschaftende|default:"-"}
+                {$Achtelfinale.heimmannschaftende|default:"-"} : {$Achtelfinale.gastmannschaftende|default:"-"}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<br />
+<hr />
+<h3 class="h3Games">Viertelfinale</h3>
+
+<table class="gamesTable">
+    <thead>
+    <tr>
+        <th>
+            Spielbezeichnung
+        </th>
+        <th>
+            Spielort
+        </th>
+        <th>
+            Start
+        </th>
+        <th colspan="2">
+            Mannschaften
+        </th>
+        <th>
+            Ergebnis
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {foreach from=$ViertelArray item=Viertelfinale}
+        <tr>
+            <td>
+                {$Viertelfinale.spielbezeichnung}
+            </td>
+            <td>
+                {$Viertelfinale.spielort}
+            </td>
+            <td>
+                {$Viertelfinale.datumuhrzeit}
+            </td>
+            <td style="border-right: 0px;">
+                {IF strstr($Viertelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Viertelfinale.heimmannschaft}.png" />{/IF} {$Viertelfinale.heimmannschaft}
+            </td>
+            <td>
+                {IF strstr($Viertelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Viertelfinale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Viertelfinale.gastmannschaft}
+            </td>
+            <td>
+                {$Viertelfinale.heimmannschaftende|default:"-"} : {$Viertelfinale.gastmannschaftende|default:"-"}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<br />
+<hr />
+<h3 class="h3Games">Halbfinale</h3>
+
+<table class="gamesTable">
+    <thead>
+    <tr>
+        <th>
+            Spielbezeichnung
+        </th>
+        <th>
+            Spielort
+        </th>
+        <th>
+            Start
+        </th>
+        <th colspan="2">
+            Mannschaften
+        </th>
+        <th>
+            Ergebnis
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {foreach from=$HalbArray item=Halbfinale}
+        <tr>
+            <td>
+                {$Halbfinale.spielbezeichnung}
+            </td>
+            <td>
+                {$Halbfinale.spielort}
+            </td>
+            <td>
+                {$Halbfinale.datumuhrzeit}
+            </td>
+            <td style="border-right: 0px;">
+                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Halbfinale.heimmannschaft}.png" />{/IF} {$Halbfinale.heimmannschaft}
+            </td>
+            <td>
+                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Halbfinale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Halbfinale.gastmannschaft}
+            </td>
+            <td>
+                {$Halbfinale.heimmannschaftende|default:"-"} : {$Halbfinale.gastmannschaftende|default:"-"}
+            </td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+<br />
+<hr />
+<h3 class="h3Games">Finale</h3>
+
+<table class="gamesTable">
+    <thead>
+    <tr>
+        <th>
+            Spielbezeichnung
+        </th>
+        <th>
+            Spielort
+        </th>
+        <th>
+            Start
+        </th>
+        <th colspan="2">
+            Mannschaften
+        </th>
+        <th>
+            Ergebnis
+        </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {foreach from=$FinalArray item=Finale}
+        <tr>
+            <td>
+                {$Finale.spielbezeichnung}
+            </td>
+            <td>
+                {$Finale.spielort}
+            </td>
+            <td>
+                {$Finale.datumuhrzeit}
+            </td>
+            <td style="border-right: 0px;">
+                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Finale.heimmannschaft}.png" />{/IF} {$Finale.heimmannschaft}
+            </td>
+            <td>
+                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Finale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Finale.gastmannschaft}
+            </td>
+            <td>
+                {$Finale.heimmannschaftende|default:"-"} : {$Finale.gastmannschaftende|default:"-"}
             </td>
         </tr>
     {/foreach}
