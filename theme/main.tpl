@@ -4,7 +4,8 @@
 <div class>
         <p class="dashbordP">
             {if $smarty.session.logged eq true}Hallo {$smarty.session.username}, Herzlich Willkommen{else}Herzlich Willkommen{/if}
-             zu unserem EM-Tippspiel!
+             zu unserem EM-Tippspiel!<br />
+            <br />
             Am 10 Juni 2016 um 21.00 Uhr in Paris im St. Denis startet die Europameisterschaft 2016 in Frankreich mit dem Spiel der<br />
             Équipe Tricolore gegen Rumänien und wir können es kaum erwarten!!!
             Sie sind fußballbegeistert und fiebern der EM genauso entgegen wie wir?
