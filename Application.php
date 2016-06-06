@@ -5,7 +5,7 @@ require_once ROOT_DIR . DS . 'classes' . DS . 'FrontController.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'IController.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'UserHelper.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'smarty-3.1.29' . DS . 'libs' . DS .  'Smarty.class.php';
-
+require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'PHPMailer' . DS . 'class.phpmailer.php';
 
 /**
  * Class Application our entrypoint for our OOP orientated website
