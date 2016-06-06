@@ -183,6 +183,11 @@ div.footer {
     text-align: center;
 }
 
+.gamesTable tbody tr:hover {
+    background-color: #f4f0f1;
+    color: black;
+}
+
 .guidelines td:first-child {
      width: 100%;
  }
