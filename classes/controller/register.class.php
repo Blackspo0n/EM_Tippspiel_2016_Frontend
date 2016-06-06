@@ -100,6 +100,32 @@ class register implements IController
 
     public function sendMail(array $userdata)
     {
-        php
+        $mailbody = "Hallo " . $userdata['nickname'];
+
+        //erzeuge Email
+        $mail = new phpmailer();
+    
+        $mail->isSMTP();
+        $mail->CharSet = 'utf-8';
+        $mail->SetLanguage("de");
+        $mail->Host = Config::$smtpSettings['host'];
+        $mail->SMTPAuth = true;
+        $mail->Username =  Config::$smtpSettings['user'];
+        $mail->Password =  Config::$smtpSettings['password'];
+        $mail->From     =  Config::$smtpSettings['email'];
+        $mail->FromName = Config::$smtpSettings['emailname'];
+
+        //main
+        $mail->AddAddress($userdata['nickname'],$userdata['email']);
+        $mail->WordWrap = 50;
+        $mail->IsHTML(false);
+        $mail->Subject  =  "WHS Tippspiel-Registrierung";
+        $mail->Body     =  $mailbody;
+
+        Application::$smarty->assign("sendEmail", true);
+        if(!$mail->Send()) {
+            Application::$smarty->assign("sendEmail", false);
+            Application::$smarty->assign("emailError", $mail->ErrorInfo);
+        }
     }
 }

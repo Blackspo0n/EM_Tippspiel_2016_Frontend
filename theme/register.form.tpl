@@ -6,7 +6,15 @@
     Bitte geben Sie dafür alle nötigen Informationen an und drücken Sie anschließend <br />
     auf "Registrieren".
 </p>
-
+{if isset($registrationErrors)}
+    <hr/>
+    <div style="font-size: 18px; text-align: center; color: white; background: lightcoral;">
+        {foreach from=$registrationErrors item=error}
+            {$error}<br />
+        {/foreach}
+    </div>
+{/if}
+<div></div>
 <hr>
 <form action="index.php?module=register" method="post" class="registForm">
     <div class="formElements">
