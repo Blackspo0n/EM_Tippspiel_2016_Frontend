@@ -1,7 +1,7 @@
 <h2 class="headerguidelines">Regelwerk</h2>
 
 <hr>
-<p>
+<p class="dashbordP" style="margin-bottom: 20px">
     Hier erhalten Sie einen Überblick, auf was Sie alles tippen können und wie viele Punkte Sie mit Ihren Tipps erhalten können. <br />
     Für exakte Tipps bekommen Sie natürlich mehr Punkte, doch auch wenn nur die Tendenz richtig ist,<br />
     können Sie eine ganze Menge Punkte sammeln. <br />
