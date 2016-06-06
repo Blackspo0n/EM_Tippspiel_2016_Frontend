@@ -2,8 +2,8 @@
 
 /**
  * Class Config
- * 
- * 
+ *
+ *
  */
 class Config
 {
@@ -13,7 +13,7 @@ class Config
         'password' => '***',
         'database' => 'em2016'
     ];
-
+    
     public static $smtpSettings = [
         'host' => '',
         'user' => '',

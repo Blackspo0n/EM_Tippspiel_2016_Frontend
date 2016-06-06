@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Our index.php is the default file thats be called by the apache server
+ * it setup our oop app load the default module main if no modulename was
+ * specified.
+ *
+ * @author Mario Kellner <mario.kellner@studmail.w-hs.de>
+ * @version 1.0
+ * 
+ */
 session_start();
 error_reporting(E_ERROR);
 
