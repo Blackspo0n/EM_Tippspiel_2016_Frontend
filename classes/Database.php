@@ -41,5 +41,6 @@ class Database
             throw new Exception('Unable to connect to database. Error:' . mysqli_error($mysqltmp));
         }
         $this->databaseLink = $mysqltmp;
+        $this->databaseLink->set_charset("UTF8");
     }
 }

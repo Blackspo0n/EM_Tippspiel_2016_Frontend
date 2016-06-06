@@ -175,19 +175,23 @@ div.footer {
     text-align: center;
 }
 
-.guidelines, .rankingTable {
+.guidelines, .rankingTable, .gamesTable {
     margin: 0 auto;
     width: 800px;
     font-size: 18px;
 }
 
-.guidelines th, .rankingTable th {
+.guidelines th, .rankingTable th, .gamesTable th {
     text-align: left;
 }
 
-.guidelines tbody td, .rankingTable tbody td {
+.guidelines tbody td, .rankingTable tbody td, .gamesTable tbody td {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
+}
+
+.gamesTable th {
+    text-align: center;
 }
 
 .guidelines td:first-child {
@@ -202,6 +206,15 @@ div.footer {
 .dashbordP {
     font-size: 18px;
     margin: 0px 20px 0px 50px;
+}
+
+.h3Games {
+    margin-left: 50px;
+}
+
+.flags {
+    width: 16px;
+    height: 16px;
 }
 
 
