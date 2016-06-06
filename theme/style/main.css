@@ -2,21 +2,10 @@
 /* CSS Document */
 
 body {
-    /*
-    background: black url('../img/background.jpg') no-repeat center center;
-    height: 100%;
-    width: 100%;
-    color: #FFFFFF;
-    font-family: "Calibri Light", sans-serif;
-    margin: 0 0 10px 0;
-    padding: 0;
-    */
-
     background: black url('../img/WHSTippBack.jpg') no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    color: #FFFFFF;
+    background-size: 100%;
+    background-attachment: fixed;
+    color: #f4f0f1;
     font-family: "Calibri Light", sans-serif;
     margin: 0 0 10px 0;
     padding: 0;
