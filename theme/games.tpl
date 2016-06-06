@@ -188,10 +188,10 @@
                 {$Halbfinale.datumuhrzeit}
             </td>
             <td style="border-right: 0px;">
-                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Halbfinale.heimmannschaft}.png" />{/IF} {$Halbfinale.heimmannschaft}
+                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Halbfinale.heimmannschaft}.png" />{/IF} {$Halbfinale.heimmannschaft}
             </td>
             <td>
-                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Halbfinale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Halbfinale.gastmannschaft}
+                {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Halbfinale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Halbfinale.gastmannschaft}
             </td>
             <td style="text-align: center">
                 {$Halbfinale.heimmannschaftende|default:"-"} : {$Halbfinale.gastmannschaftende|default:"-"}
@@ -239,10 +239,10 @@
                 {$Finale.datumuhrzeit}
             </td>
             <td style="border-right: 0px;">
-                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Finale.heimmannschaft}.png" />{/IF} {$Finale.heimmannschaft}
+                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Finale.heimmannschaft}.png" />{/IF} {$Finale.heimmannschaft}
             </td>
             <td>
-                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Finale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Finale.gastmannschaft}
+                {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Finale.gastmannschaft|default:"euFlag"}.png" />{/IF} {$Finale.gastmannschaft}
             </td>
             <td style="text-align: center">
                 {$Finale.heimmannschaftende|default:"-"} : {$Finale.gastmannschaftende|default:"-"}
