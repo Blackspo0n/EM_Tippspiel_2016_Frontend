@@ -1,6 +1,20 @@
 <?php
 
 /**
+ * This is a dirty smarty hack to eval the template code.
+ * It prevents the framework to write files to the local file system
+ *
+ * @url http://www.smarty.net/forums/viewtopic.php?t=20612#77287
+ * Class EvaledFileResource
+ */
+class EvaledFileResource extends Smarty_Internal_Resource_File {
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null) {
+        parent::populate($source, $_template);
+        $source->recompiled = true;
+    }
+}
+
+/**
  * Class SmartyInstance
  *
  * @method void assign(string $tplvar, mixed $obj);
@@ -12,10 +26,14 @@ class SmartyInstance
     private function __construct() {
         $this->smarty = new Smarty();
 
+        $this->smarty->setTemplateDir(ROOT_DIR . DS . 'theme');
+        $this->smarty->compile_check = false;
+        $this->smarty->force_compile = false;
+        $this->smarty->setCompileDir(sys_get_temp_dir());
+        $this->smarty->registerResource('file', new EvaledFileResource());
+
         $this->smarty->assign("base", "/" . basename(ROOT_DIR));
 
-        $this->smarty->setTemplateDir(ROOT_DIR . DS . 'theme');
-        $this->smarty->setCompileDir(ROOT_DIR . DS . 'theme_compile');
     }
 
     static public function getInstance() {
@@ -32,5 +50,4 @@ class SmartyInstance
 
         throw new Exception("This and SMARTY Class doesnt have these method: " . $func);
     }
-
 }
