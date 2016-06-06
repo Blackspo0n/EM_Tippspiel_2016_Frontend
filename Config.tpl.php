@@ -18,6 +18,7 @@ class Config
         'host' => '',
         'user' => '',
         'email' => '',
+        'emailname' => '',
         'password' => '',
     ];
 }
