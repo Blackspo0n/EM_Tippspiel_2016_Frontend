@@ -2,14 +2,14 @@
 
 <hr>
 <p class="dashbordP" style="margin-bottom: 20px">
-    Hier erhalten Sie einen Überblick, auf was Sie alles tippen können und wie viele Punkte Sie mit Ihren Tipps erhalten können. <br />
-    Für exakte Tipps bekommen Sie natürlich mehr Punkte, doch auch wenn nur die Tendenz richtig ist,<br />
-    können Sie eine ganze Menge Punkte sammeln. <br />
+    Hier erhalten Sie einen &uuml;berblick, auf was Sie alles tippen k&ouml;nnen und wie viele Punkte Sie mit Ihren Tipps erhalten k&ouml;nnen. <br />
+    F&uuml;r exakte Tipps bekommen Sie nat&uuml;rlich mehr Punkte, doch auch wenn nur die Tendenz richtig ist,<br />
+    k&ouml;nnen Sie eine ganze Menge Punkte sammeln. <br />
     Die Punkte die Sie pro Spieltag erreicht haben werden zusammen gerechnet und zu Ihrem Gesamt-Punktestand addiert.<br />
-    In einem Ranking werden die Punktestände aller Tipper veröffentlicht,<br />
-    somit können Sie jederzeit sehen wie viele Punkte Sie und Ihre Konkurrenz erzielt haben.<br />
+    In einem Ranking werden die Punktest&auml;nde aller Tipper ver&ouml;ffentlicht,<br />
+    somit k&ouml;nnen Sie jederzeit sehen wie viele Punkte Sie und Ihre Konkurrenz erzielt haben.<br />
     <br />
-    Wir wünschen Ihnen viel Spaß und Erfolg beim tippen.
+    Wir w&uuml;nschen Ihnen viel Spa&szlig; und Erfolg beim tippen.
     Ihr EM-Tippspiel Team
 </p>
 <table class="guidelines">
@@ -23,21 +23,21 @@
 
     <tbody>
         <tr>
-        <td>Exakte Übereinstimmung zwischen getipptem
-            und tatsächlichen Halbzeitergebnis</td>
+        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+            und tats&auml;chlichen Halbzeitergebnis</td>
         <td>6</td>
         </tr>
         <tr>
         <td>Korrekte Tendenz bei getipptem und
-            tatsächlichen Halbzeitergebnis
+            tats&auml;chlichen Halbzeitergebnis
         </td>
         <td>3
         </td>
         </tr>
 
         <tr>
-        <td>Exakte Übereinstimmung zwischen getipptem
-            und tatsächlichen Ergebnis nach regulärer
+        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+            und tats&auml;chlichen Ergebnis nach regul&auml;rer
             Spielzeit
         </td>
         <td>11
@@ -47,15 +47,15 @@
 
         <tr>
         <td>Korrekte Tendenz bei getipptem und
-            tatsächlichen Ergebnis nach regulärer Spielzeit
+            tats&auml;chlichen Ergebnis nach regul&auml;rer Spielzeit
         </td>
         <td>5
         </td>
         </tr>
 
         <tr>
-        <td>Exakte Übereinstimmung zwischen getipptem
-            und tatsächlichen Ergebnis nach Verlängerung
+        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+            und tats&auml;chlichen Ergebnis nach Verl&auml;ngerung
         </td>
         <td>11
         </td>
@@ -64,7 +64,7 @@
 
         <tr>
         <td>Korrekte Tendenz bei getipptem und
-            tatsächlichen Ergebnis nach Verlängerung
+            tats&auml;chlichen Ergebnis nach Verl&auml;ngerung
 
         </td>
         <td>5
@@ -72,9 +72,9 @@
         </tr>
 
         <tr>
-        <td>Exakte Übereinstimmung zwischen getipptem
-            und tatsächlichen Ergebnis nach
-            Elfmeterschießen
+        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+            und tats&auml;chlichen Ergebnis nach
+            Elfmeterschie&szlig;en
         </td>
         <td>11
         </td>
@@ -83,21 +83,21 @@
 
         <tr>
         <td>Korrekte Tendenz bei getipptem und
-            tatsächlichen Ergebnis nach Elfmeterschießen
+            tats&auml;chlichen Ergebnis nach Elfmeterschie&szlig;en
         </td>
         <td>5
         </td>
         </tr>
 
         <tr>
-        <td>Korrekte Anzahl an gelben Karten für die Heimmannschaft
+        <td>Korrekte Anzahl an gelben Karten f&uuml;r die Heimmannschaft
         </td>
         <td>3
         </td>
         </tr>
 
         <tr>
-        <td>Korrekte Anzahl an gelben Karten für die
+        <td>Korrekte Anzahl an gelben Karten f&uuml;r die
             Gastmannschaft
         </td>
         <td>3
@@ -105,7 +105,7 @@
         </tr>
 
         <tr>
-        <td>Korrekte Anzahl an roten Karten für die
+        <td>Korrekte Anzahl an roten Karten f&uuml;r die
             Heimmannschaft, sofern dieser Wert ungleich 0
             ist
 
@@ -115,7 +115,7 @@
         </tr>
 
         <tr>
-        <td>Korrekte Anzahl an roten Karten für die
+        <td>Korrekte Anzahl an roten Karten f&uuml;r die
             Gastmannschaft, sofern dieser Wert ungleich 0
             ist
 

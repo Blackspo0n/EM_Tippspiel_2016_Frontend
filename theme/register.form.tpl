@@ -2,8 +2,8 @@
 <hr>
 
 <p style="font-size: 18px; text-align: center">
-    Mit diesem Formular können Sie einen Benutzeraccount registrieren. <br />
-    Bitte geben Sie dafür alle nötigen Informationen an und drücken Sie anschließend <br />
+    Mit diesem Formular k&ouml;nnen Sie einen Benutzeraccount registrieren. <br />
+    Bitte geben Sie daf&uuml;r alle n&ouml;tigen Informationen an und dr&uuml;cken Sie anschlie&szlig;end <br />
     auf "Registrieren".
 </p>
 {if isset($registrationErrors)}
@@ -19,7 +19,7 @@
 <form action="index.php?module=register" method="post" class="registForm">
     <div class="formElements">
         <div class="formLine">
-            <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzerName]" title="Wird zur Anmeldung benötigt." value="{$defaults.benutzerName|default:''}">
+            <label for="accountname">Benutzername:</label><input type="text" id="accountname" name="account[benutzerName]" title="Wird zur Anmeldung ben&ouml;tigt." value="{$defaults.benutzerName|default:''}">
         </div>
         <div class="formLine">
             <label for="nickname">Nickname:</label><input type="text" id="nickname" name="account[nickname]" title="Wird in der Tipprunde angezeigt."  value="{$defaults.nickname|default:''}">
@@ -28,13 +28,13 @@
             <label for="password">Passwort:</label><input type="password" id="password" name="account[passwort]" >
         </div>
         <div class="formLine">
-            <label for="passwordrepeat">Passwort - Bestätigung:</label><input type="password" id="passwordrepeat" name="account[passwortrepeat]">
+            <label for="passwordrepeat">Passwort - Best&auml;tigung:</label><input type="password" id="passwordrepeat" name="account[passwortrepeat]">
         </div>
         <div class="formLine">
             <label for="email">E-Mail:</label><input type="text" id="email" name="account[email]"  value="{$defaults.email|default:''}">
         </div>
         <div class="formLine">
-            <label for="emailrepeat">E-Mail - Bestätigung:</label><input type="text" id="emailrepeat" name="account[emailrepeat]">
+            <label for="emailrepeat">E-Mail - Best&auml;tigung:</label><input type="text" id="emailrepeat" name="account[emailrepeat]">
         </div>
         <div class="formLine">
             <label for="show_Email">E-Mail Anzeigen?</label>
