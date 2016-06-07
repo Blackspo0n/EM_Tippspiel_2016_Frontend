@@ -169,6 +169,25 @@ div.footer {
     width: 800px;
     font-size: 18px;
 }
+.gamesTable tr td:nth-child(1) {
+    width: 100px;
+}
+.gamesTable tr td:nth-child(2) {
+    width: 120px;
+}
+.gamesTable tr td:nth-child(3) {
+    width: 200px;
+    text-align: center;
+}
+.gamesTable tr td:nth-child(4) {
+    width: 150px;
+}
+.gamesTable tr td:nth-child(5) {
+    width: 150px;
+}
+.gamesTable tr td:nth-child(6) {
+    width: 80px;
+}
 
 .guidelines th, .rankingTable th, .gamesTable th {
     text-align: left;
