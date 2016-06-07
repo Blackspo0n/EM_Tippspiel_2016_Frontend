@@ -5,13 +5,13 @@ class main implements IController {
     {
 
         $resultSet = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE gelbekarteheim=NULL");
-        $myArray = [];
+        $gamesArray = [];
         if ($resultSet) {
             while ($row = $resultSet->fetch_assoc()) {
-                $myArray[] = $row;
+                $gamesArray[] = $row;
             }
 
-            Application::$smarty->assign("SpieleArray", $myArray);
+            Application::$smarty->assign("SpieleArray", $gamesArray);
         }
 
         Application::$smarty->assign("yolo", "You only 'lie' once.");
