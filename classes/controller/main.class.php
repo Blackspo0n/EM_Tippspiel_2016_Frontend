@@ -4,7 +4,7 @@ class main implements IController {
     public function __construct()
     {
 
-        $resultSet = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE gelbekarteheim=NULL");
+        $resultSet = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE gelbekartenheim IS NULL AND datumuhrzeit BETWEEN DATE_SUB(NOW(), INTERVAL 2 HOUR) AND NOW() ");
         $gamesArray = [];
         if ($resultSet) {
             while ($row = $resultSet->fetch_assoc()) {
@@ -14,7 +14,6 @@ class main implements IController {
             Application::$smarty->assign("SpieleArray", $gamesArray);
         }
 
-        Application::$smarty->assign("yolo", "You only 'lie' once.");
         Application::$smarty->assign('contentfile', 'main.tpl');
     }
 

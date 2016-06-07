@@ -179,18 +179,13 @@ div.footer {
     border-bottom: 1px solid white;
 }
 
-.rankingTable tbody tr:hover {
+.rankingTable tbody tr:hover, .gamesTable tbody tr:hover {
     background-color: #f4f0f1;
     color: black;
 }
 
 .gamesTable th {
     text-align: center;
-}
-
-.gamesTable tbody tr:hover {
-    background-color: #f4f0f1;
-    color: black;
 }
 
 .guidelines td:first-child {
@@ -216,9 +211,31 @@ div.footer {
     margin-left: 50px;
 }
 
+.h2Dashboard {
+    text-align: center;
+}
+
 .flags {
     width: 16px;
     height: 16px;
+}
+
+.dashboardCurrentGamesDiv {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f4f0f1;
+    width: 500px;
+    margin: 0px auto;
+    padding: 15px 10px 15px 10px;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.dashboardCurrentGamesDiv table {
+    width: 100%;
+    text-align: center;
 }
 
 
