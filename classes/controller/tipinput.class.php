@@ -9,47 +9,49 @@
 class tipinput implements IController
 {
 
+    /**
+     *
+     */
     public function Run()
     {
-        $gameData = $this->gameData();
- 
+
+       // $gameData = Application::$database->databaseLink->query("SELECT * FROM spiele AS R JOIN benutzer AS B JOIN tipps AS T ON R.spieleid = T.spieleid WHERE  R.gelbekartenheim = 0 AND WHERE T.tippgelbeheim = 0 ORDER BY datumuhrzeit LIMIT 1");
+        $this->gameData();
         Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
 
-
-        if (array_key_exists('tipinput', $_POST)) {
-            $result = $this->doCheckValidData($_POST['tipinput']);
-            if ($result === true) {
-
+      if (isset($_POST['tipinput'])) {
+            echo "mamaaa";
+           $message =  $this->doCheckValidData($_POST['tipinput']);
+            var_dump($message);
+            if ($message === true) {
+                Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!'); 
+                $this->displayList();
             } else {
-                Application::$smarty->assign('registrationErrors', $result);
-                $this->RegisterFormular($_POST['account']);
-
-
+                Application::$smarty->assign('errors', $message);
+                $this->displayForm($_GET['showform']);
             }
         }
+        elseif (isset($_GET['showform'])) {
+            $this->displayForm($_GET['showform']);
+        }else {
+            $this->displayList();
+        }
+
     }
 
 
     public function gameData()
     {
-        $username = $smarty.session.username;
+        // $username = $smarty.session.username;
         $db = Application::$database->databaseLink;
-
-        $query = "SELECT * FROM spiele";
-        $result = $db->query("SELECT * FROM spiele");
-
-        echo "<table>";
-
-        while ($row = mysql_fetch_array($result)) {
-            echo "<tr>
-                 <td>" . $row['spielbezeichnung'] . "</td>
-                 <td>" . $row['heimmannschaft'] . "</td>
-                 <td>" . $row['gastmannschaft'] . "</td>
-                 </tr>";
+        $result = $db->query("SELECT * FROM spiele LIMIT 1");
+        
+        $gameData = [];
+        
+        while ($row = $result->fetch_assoc()) {
+            $gameData[] = $row;
         }
-
-        echo "</table>";
-
+        Application::$smarty->assign('gameData', $gameData);
     }
 
     public function doCheckValidData(array $tipinputdata)
@@ -98,5 +100,20 @@ class tipinput implements IController
         return $errorMessages;
     }
 
+    public function displayList () {
+        $this->gameData();
+        Application::$smarty->assign('contentfile', 'tipinput.list.tpl');
 
+    }
+
+    public function displayForm ($spieleID) {
+        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid=". (int) $spieleID);        
+        if ($singleGameData) {
+            $game = $singleGameData->fetch_assoc();
+            Application::$smarty->assign('singleGameData', $game);
+            Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
+        } else {
+            $this->displayList();
+        }
+    }
 }
