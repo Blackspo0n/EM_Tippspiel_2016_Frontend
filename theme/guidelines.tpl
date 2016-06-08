@@ -125,3 +125,7 @@
         </tr>
     </tbody>
 </table>
+<div class="preziDiv">
+    <h3 class="h3Games" style="margin-left: 0px">Die Punkte verteilung:</h3>
+    <iframe class="PreziFrame" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" width="800" height="400" src="https://prezi.com/embed/-ckmplenkiav/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5KzdPNjYzV2tHK2ZSOFpmNXBsOU01SHh3PT0&amp;landing_sign=ktbqxQnQKf_lEQJV-neyMUff5qY-Bu7Z4lADarxxR-8"></iframe>
+</div>

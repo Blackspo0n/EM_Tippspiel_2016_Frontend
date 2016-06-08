@@ -273,3 +273,9 @@ form.tipinputForm > div.btnLine {
     width:100%;
     text-align: center;
 }
+
+.preziDiv {
+    margin: 50px auto;
+    width: 800px;
+    font-size: 18px;
+}
