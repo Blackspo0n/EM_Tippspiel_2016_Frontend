@@ -1,5 +1,7 @@
 <h2 style="text-align: center">Ranking</h2>
+
 <hr />
+
 <h3 class="h3Games">Gruppenphase</h3>
 <table class="gamesTable">
     <thead>
@@ -32,7 +34,7 @@
                 {$grpPhase.spielort}
             </td>
             <td>
-                {$grpPhase.datumuhrzeit}
+                {$grpPhase.datumuhrzeit|date_format:"d. M Y H:i"}
             </td>
             <td style="border-right: 0px;">
                 {IF strstr($grpPhase.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$grpPhase.heimmannschaft}.png" />{/IF} {$grpPhase.heimmannschaft}
@@ -83,7 +85,7 @@
                 {$Achtelfinale.spielort}
             </td>
             <td>
-                {$Achtelfinale.datumuhrzeit}
+                {$Achtelfinale.datumuhrzeit|date_format:"d. M Y H:i"}
             </td>
             <td style="border-right: 0px;">
                 {IF strstr($Achtelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Achtelfinale.heimmannschaft}.png" />{/IF} {$Achtelfinale.heimmannschaft}
@@ -134,7 +136,7 @@
                 {$Viertelfinale.spielort}
             </td>
             <td>
-                {$Viertelfinale.datumuhrzeit}
+                {$Viertelfinale.datumuhrzeit|date_format:"d. M Y H:i"}
             </td>
             <td style="border-right: 0px;">
                 {IF strstr($Viertelfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="/theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="/theme/img/flags/{$Viertelfinale.heimmannschaft}.png" />{/IF} {$Viertelfinale.heimmannschaft}
@@ -185,7 +187,7 @@
                 {$Halbfinale.spielort}
             </td>
             <td>
-                {$Halbfinale.datumuhrzeit}
+                {$Halbfinale.datumuhrzeit|date_format:"d. M Y H:i"}
             </td>
             <td style="border-right: 0px;">
                 {IF strstr($Halbfinale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Halbfinale.heimmannschaft}.png" />{/IF} {$Halbfinale.heimmannschaft}
@@ -236,7 +238,7 @@
                 {$Finale.spielort}
             </td>
             <td>
-                {$Finale.datumuhrzeit}
+                {$Finale.datumuhrzeit|date_format:"d. M Y H:i"}
             </td>
             <td style="border-right: 0px;">
                 {IF strstr($Finale.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$Finale.heimmannschaft}.png" />{/IF} {$Finale.heimmannschaft}
