@@ -8,7 +8,15 @@
 </p>
 
 
-<form action="index.php?module=register" method="post" class="registForm">
+{if isset($error)}
+    <hr/>
+    <div style="font-size: 18px; text-align: center; color: white; background: lightcoral;">
+            {$error}
+    </div>
+    <hr>
+{/if}
+
+<form action="index.php?module=forgotPassword" method="post" class="registForm">
     <div class="formElements">
         <div class="formLine">
             <label for="email">E-MailAdresse:</label><input type="text" id="email" name="forgotPassword[email]" title="Wird zur Anmeldung ben&ouml;tigt.">

@@ -3,6 +3,7 @@
 require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'smarty-3.1.29' . DS . 'libs' . DS .  'Smarty.class.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'smarty-3.1.29' . DS . 'libs' . DS . 'sysplugins'. DS . 'smarty_internal_resource_file.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'PHPMailer' . DS . 'class.phpmailer.php';
+require_once ROOT_DIR . DS . 'classes' . DS . 'libs' . DS . 'PHPMailer' . DS . 'class.smtp.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'Database.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'SmartyInstance.php';
 require_once ROOT_DIR . DS . 'classes' . DS . 'FrontController.php';

@@ -100,17 +100,16 @@ class register implements IController
 
     public function sendMail(array $userdata)
     {
-        $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n
-        Vielen Dank für deine Registrierung für das Tippspiel der W-HS. \n
-        Anbei findest du noch alle deine wichtigen Nutzerdaten:\n
-        \n
-        E-Mail Adresse: " . $userdata['email'] . "\n
-        Nickname (dein Loginname): " . $userdata['nickname'] . "\n
-        Passwort: " . $userdata['passwort'] . " \n\n
-        Bitte beachte, dass dein Passwort nur als Hash in unsere Datenbank gespeichert wird.\n
-        Notiere dir dein Passwort daher gut.\n\n
-        Auf gutes Tippen \n
-        Dein W-HS Tippspiel Team";
+        $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n" .
+        "Vielen Dank für deine Registrierung für das Tippspiel der W-HS. \n" .
+        "Anbei findest du noch alle deine wichtigen Nutzerdaten:\n\n" .
+        "E-Mail Adresse: " . $userdata['email'] . "\n" .
+        "Nickname (dein Loginname): " . $userdata['nickname'] . "\n" .
+        "Passwort: " . $userdata['passwort'] . " \n\n" .
+        "Bitte beachte, dass dein Passwort nur als Hash in unsere Datenbank gespeichert wird.\n" .
+        "Notiere dir dein Passwort daher gut.\n\n" .
+        "Auf gutes Tippen \n" .
+        "Dein W-HS Tippspiel Team";
 
         //erzeuge Email
         $mail = new phpmailer();
@@ -126,10 +125,10 @@ class register implements IController
         $mail->FromName = Config::$smtpSettings['emailname'];
 
         //main
-        $mail->AddAddress($userdata['nickname'],$userdata['email']);
+        $mail->AddAddress($userdata['email'], $userdata['nickname']);
         $mail->WordWrap = 50;
         $mail->IsHTML(false);
-        $mail->Subject  =  "WHS Tippspiel-Registrierung";
+        $mail->Subject  =  "WHS Tippspiel - Registrierung";
         $mail->Body     =  $mailbody;
 
         Application::$smarty->assign("sendEmail", true);

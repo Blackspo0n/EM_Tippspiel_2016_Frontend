@@ -25,7 +25,7 @@
         "forum": "http://www.smarty.net/forums/"
     },
     "require": {
-        "php": ">=5.2"
+        "php": ">=5.2",
     },
     "autoload": {
         "classmap": [
@@ -34,10 +34,4 @@
             "libs/sysplugins/"
         ]
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "3.1.x-dev"
-        }
-    }
-
 }

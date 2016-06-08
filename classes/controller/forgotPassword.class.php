@@ -11,8 +11,8 @@ class forgotPassword implements IController
 
     public function Run()
     {
-        if(array_key_exists("resetPassword", $_POST)) {
-            $this->doPasswordRecover($_POST['resetPassword']);
+        if(array_key_exists("forgotPassword", $_POST)) {
+            $this->doPasswordRecover($_POST['forgotPassword']);
         }
         else {
             $this->displayPasswordForm();
@@ -31,13 +31,21 @@ class forgotPassword implements IController
                 Application::$database->databaseLink->query("UPDATE benutzer SET passwort = '" . md5($newPassword) . "' WHERE benutzerid = " . (int)$fetch['benutzerid']);
                 $fetch['passwort'] = $newPassword;
 
+
                 $this->sendMail($fetch);
 
                 Application::$smarty->assign('contentfile', 'forgotPassword.success.tpl');
             }
             else {
                 Application::$smarty->assign("error", "E-Mail Adresse existiert nicht");
+
+                Application::$smarty->assign('contentfile', 'forgotPassword.tpl');
             }
+        }
+        else {
+            Application::$smarty->assign("error", "E-Mail Adresse existiert nicht");
+
+            Application::$smarty->assign('contentfile', 'forgotPassword.tpl');
         }
     }
 
@@ -61,15 +69,14 @@ class forgotPassword implements IController
 
     public function sendMail(array $userdata)
     {
-        $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n
-        du hast erfolgreich dein Passwort zurück gesetzt. \n
-        Anbei findest du dein neues Passwort:\n
-        \n
-        " . $userdata['passwort'] . "\n\n
-        Bitte beachte, dass dein Passwort nur als Hash in unsere Datenbank gespeichert wird.\n
-        Notiere dir dein Passwort daher gut.\n\n
-        Auf gutes Tippen \n
-        Dein W-HS Tippspiel Team";
+        $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n" .
+        "du hast erfolgreich dein Passwort zurück gesetzt. \n" .
+        "Anbei findest du dein neues Passwort:\n\n" .
+        $userdata['passwort'] . "\n\n" .
+        "Bitte beachte, dass dein Passwort nur als Hash in unsere Datenbank gespeichert wird.\n" .
+        "Notiere dir dein Passwort daher gut.\n\n" .
+        "Auf gutes Tippen \n" .
+        "Dein W-HS Tippspiel Team";
 
         //erzeuge Email
         $mail = new phpmailer();
@@ -78,6 +85,7 @@ class forgotPassword implements IController
         $mail->CharSet = 'utf-8';
         $mail->SetLanguage("de");
         $mail->Host = Config::$smtpSettings['host'];
+        $mail->SMTPSecure = 'tls';
         $mail->SMTPAuth = true;
         $mail->Username =  Config::$smtpSettings['user'];
         $mail->Password =  Config::$smtpSettings['password'];
@@ -85,13 +93,14 @@ class forgotPassword implements IController
         $mail->FromName = Config::$smtpSettings['emailname'];
 
         //main
-        $mail->AddAddress($userdata['nickname'],$userdata['email']);
+        $mail->AddAddress($userdata['email'], $userdata['nickname']);
         $mail->WordWrap = 50;
         $mail->IsHTML(false);
-        $mail->Subject  =  "WHS Tippspiel-Registrierung";
+        $mail->Subject  =  "WHS Tippspiel - Passwort vergessen";
         $mail->Body     =  $mailbody;
 
         Application::$smarty->assign("sendEmail", true);
+
         if(!$mail->Send()) {
             Application::$smarty->assign("sendEmail", false);
             Application::$smarty->assign("emailError", $mail->ErrorInfo);

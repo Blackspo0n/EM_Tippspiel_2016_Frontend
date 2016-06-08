@@ -15,11 +15,11 @@ class Config
     ];
     
     public static $smtpSettings = [
-        'host' => '',
-        'user' => '',
-        'email' => '',
-        'emailname' => '',
-        'password' => '',
+        'host' => 'smtp.web.de',
+        'user' => 'whstippspiel@web.de',
+        'email' => 'whstippspiel@web.de',
+        'emailname' => 'WHS Tippspiel',
+        'password' => 'Tdrl85_6',
     ];
 }
 
