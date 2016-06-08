@@ -122,7 +122,7 @@ form.registForm input[type=text],form.registForm input[type=password] {
     color: gainsboro;
 
 }
-.loggedLine a {
+.loginLine a {
     color: orangered;
 }
 

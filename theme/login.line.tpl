@@ -5,4 +5,6 @@
     <input type="checkbox" value="1" id="autologin" name="login[autologin]">
     <label for="autologin">Autologin</label>
     <input type="submit" value="Login" />
+
+    <a href="index.php?module=forgotPassword" style="margin-left: 15px;">Passwort vergessen</a>
 </form>

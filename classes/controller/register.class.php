@@ -100,7 +100,17 @@ class register implements IController
 
     public function sendMail(array $userdata)
     {
-        $mailbody = "Hallo " . $userdata['nickname'];
+        $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n
+        Vielen Dank für deine Registrierung für das Tippspiel der W-HS. \n
+        Anbei findest du noch alle deine wichtigen Nutzerdaten:\n
+        \n
+        E-Mail Adresse: " . $userdata['email'] . "\n
+        Nickname (dein Loginname): " . $userdata['nickname'] . "\n
+        Passwort: " . $userdata['passwort'] . " \n\n
+        Bitte beachte, dass dein Passwort nur als Hash in unsere Datenbank gespeichert wird.\n
+        Notiere dir dein Passwort daher gut.\n\n
+        Auf gutes Tippen \n
+        Dein W-HS Tippspiel Team";
 
         //erzeuge Email
         $mail = new phpmailer();

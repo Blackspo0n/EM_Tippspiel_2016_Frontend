@@ -15,7 +15,7 @@ class UserHelper
 
         $result = Application::$database->databaseLink->query("SELECT * FROM benutzer WHERE nickname = '" .
             Application::$database->databaseLink->real_escape_string($user)
-            . "' AND passwort = '" . Application::$database->databaseLink->real_escape_string($password) . "'");
+            . "' AND passwort = '" . Application::$database->databaseLink->real_escape_string(md5($password)) . "'");
 
 
         if(!$result)  return false;
@@ -130,6 +130,9 @@ class UserHelper
         foreach ($userdata as $key => $value)  {
             if($key === 'show_Email') {
                 $sql .= (int)$value;
+            }
+            elseif($key === 'passwort') {
+                $sql .= "'" . $db->real_escape_string(md5($value)) ."'";
             }
             else {
                 $sql .= "'" . $db->real_escape_string($value) ."'";
