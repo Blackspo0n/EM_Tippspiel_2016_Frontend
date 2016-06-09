@@ -13,13 +13,20 @@ class tipinput implements IController
     {
         if(isset($_SESSION['userid'])) {
             if (isset($_POST['tipinput'])) {
-                $message = $this->doCheckValidData($_POST['tipinput'], $_GET['showform'], $_SESSION['userid']);
-                if ($message === true) {
-                    Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!');
+                $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$_GET['showform']);
+
+                if ($singleGameData && $game = $singleGameData->fetch_assoc()) {
+                    $message = $this->doCheckValidData($_POST['tipinput'], $_GET['showform'], $_SESSION['userid']);
+                    if ($message === true) {
+                        Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!');
+                        $this->displayList();
+                    } else {
+                        Application::$smarty->assign('errors', $message);
+                        $this->displayForm($_GET['showform']);
+                    }
+                }
+                else {
                     $this->displayList();
-                } else {
-                    Application::$smarty->assign('errors', $message);
-                    $this->displayForm($_GET['showform']);
                 }
             } elseif (isset($_GET['showform'])) {
                 $this->displayForm($_GET['showform']);
@@ -45,11 +52,18 @@ class tipinput implements IController
 
     public function doCheckValidData(array $tipinputdata, $spieleid, $benutzerid)
     {
+
         $errorMessages = [];
         $tipinputdata['spieleid'] = $spieleid;
         $tipinputdata['benutzerid'] = $benutzerid;
         $tipinputdata['tippdatum'] = 'NOW()';
         $db = Application::$database->databaseLink; // because its shorter than Application::$database->databaseLink
+
+        if((int)$tipinputdata['tippheimhz'] > (int)$tipinputdata['tippheimende'] || (int)$tipinputdata['tippgasthz'] > (int)$tipinputdata['tippgastende']) {
+
+            $errorMessages[] = "Tipp für die zweite Halbzeit kann nicht kleiner sein als der Tipp für die erste Halbzeit";
+            return $errorMessages;
+        }
 
         $sql = "INSERT INTO tipps (" . implode(',', array_keys($tipinputdata)) . ") VALUES (";
 
@@ -89,8 +103,8 @@ class tipinput implements IController
     {
         $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$spieleID);
 
-        if ($singleGameData) {
-            $game = $singleGameData->fetch_assoc();
+        if ($singleGameData && $game = $singleGameData->fetch_assoc()) {
+
             Application::$smarty->assign('singleGameData', $game);
             Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
         } else {

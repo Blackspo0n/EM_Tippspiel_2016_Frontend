@@ -58,6 +58,10 @@
                 <a href="index.php?module=tipinput&showform={$grpPhase.spieleid}">Tipp abgeben</a>
             </td>
         </tr>
+    {foreachelse}
+        <tr>
+            <td colspan="6" align="center">Du kannst keine momentan keine Tipps abgeben.</td>
+        </tr>
     {/foreach}
     </tbody>
 </table>
