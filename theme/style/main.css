@@ -202,25 +202,15 @@ div.footer {
 }
 
 .tippTable tr td:nth-child(1) {
-    width: 410px;
+    width: 400px;
 }
 .tippTable tr td:nth-child(2) {
     width: 200px;
 }
-.tippTable tr td:nth-child(3) {
-    width: 50px;
 
-}
-.tippTable tr td:nth-child(4) {
-    width: 1px;
-    text-align: center;
-    border-right: 1px solid white;
-}
-.tippTable tr td:nth-child(5) {
-    width: 10px;
-}
-.tippTable tr td:nth-child(6) {
-    width: 80px;
+.tippTable tbody tr:hover {
+    background-color: #f4f0f1;
+    color: black;
 }
 
 .guidelines th, .rankingTable th, .gamesTable th {
