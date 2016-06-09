@@ -9,10 +9,15 @@
 <hr/>
 
 {if isset($message)}
-
-    <p style="width: 600px; text-align: center; margin: 0 auto;">
+    <div style="font-size: 18px; text-align: center; color: black; background: lightgreen;">
         {$message}
-    </p>
+    </div>
+    <hr>
+{/if}
+{if isset($error)}
+    <div style="font-size: 18px; text-align: center; color: black; background: lightcoral;">
+        {$error}
+    </div>
     <hr>
 {/if}
 <table class="posTippTable" style="">
@@ -60,7 +65,7 @@
         </tr>
     {foreachelse}
         <tr>
-            <td colspan="6" align="center">Du kannst keine momentan keine Tipps abgeben.</td>
+            <td colspan="6" align="center">Du kannst momentan keine Tipps abgeben.</td>
         </tr>
     {/foreach}
     </tbody>

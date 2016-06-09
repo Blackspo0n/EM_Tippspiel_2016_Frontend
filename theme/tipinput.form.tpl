@@ -57,12 +57,12 @@
             </tr>
 
             <tr>
-                <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "Gruppe")}</td>
+                <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "pe")}</td>
                 <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimende]" /></td>
                 <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastende]"></td>
             </tr>
 
-            {if strpos($singleGameData.spielbezeichnung, "Gruppe") == false}
+            {if strpos($singleGameData.spielbezeichnung, "ruppe ") eq false}
             <tr>
                 <td>Tore nach Verlängerung</td>
                 <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimverl]" /></td>
