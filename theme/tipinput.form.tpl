@@ -52,43 +52,43 @@
         <tbody>
             <tr>
                 <td>Tore nach Halbzeit</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[heimmannschafthz]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[gastmannschafthz]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimhz]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgasthz]"></td>
             </tr>
 
             <tr>
                 <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "Gruppe")}</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[heimmannschaftende]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[gastmannschaftende]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimende]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastende]"></td>
             </tr>
 
             {if strpos($singleGameData.spielbezeichnung, "Gruppe") == false}
             <tr>
                 <td>Tore nach Verlängerung</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[heimmannschaftverl]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[gastmannschaftverl]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimverl]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastverl]"></td>
             </tr>
 
             <tr>
                 <td>Tore nach Elfmeter</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[heimmannschaftelf]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[heimmannschaftelf]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimelf]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastelf]"></td>
             </tr>
             {/if}
 
             <tr>
                 <td>Gelbe Karten</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[gelbekartenheim]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[gelbekartengast]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippgelbeheim]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgelbegast]"></td>
             </tr>
             <tr>
                 <td>Rote Karten</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[rotekartenheim]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[rotekartengast]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tipproteheim]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tipprotegast]"></td>
             </tr>
             <tr>
                 <td></td>
-                <td align="center" style="padding: 10px;"><input type="submit" value="Tipps Speichern"></td>
+                <td align="center" style="padding: 10px;"><input type="submit" value="Tipp abgeben"></td>
                 <td align="center"></td>
             </tr>
         </tbody>

@@ -13,7 +13,7 @@ class tipinput implements IController
     {
         if(isset($_SESSION['userid'])) {
             if (isset($_POST['tipinput'])) {
-                $message = $this->doCheckValidData($_POST['tipinput']);
+                $message = $this->doCheckValidData($_POST['tipinput'], $_GET['showform'], $_SESSION['userid']);
                 if ($message === true) {
                     Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!');
                     $this->displayList();
@@ -43,42 +43,31 @@ class tipinput implements IController
         Application::$smarty->assign('gameData', $gameData);
     }
 
-    public function doCheckValidData(array $tipinputdata)
+    public function doCheckValidData(array $tipinputdata, $spieleid, $benutzerid)
     {
         $errorMessages = [];
-
+        $tipinputdata['spieleid'] = $spieleid;
+        $tipinputdata['benutzerid'] = $benutzerid;
+        $tipinputdata['tippdatum'] = 'NOW()';
         $db = Application::$database->databaseLink; // because its shorter than Application::$database->databaseLink
 
-        if (empty($tipinputdata['heimmannschafthz'])) {
-            $errorMessages[] = 'Kein';
+        $sql = "INSERT INTO tipps (" . implode(',', array_keys($tipinputdata)) . ") VALUES (";
+
+        foreach($tipinputdata as $key => &$value) {
+            if(empty($value)) {
+                $value = 0;
+            }
         }
 
-        if (empty($tipinputdata['gastmannschafthz'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
-        }
+        $sql .= implode(",", $tipinputdata);
 
-        if (empty($tipinputdata['homesecondhalf'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
-        }
+        $sql.=")";
 
-        if (empty($tipinputdata['guestsecondhalf'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
+        if($db->query($sql)) {
+            return true;
         }
-
-        if (empty($tipinputdata['yellowcardshome'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
-        }
-
-        if (empty($tipinputdata['yellowcardsguest'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
-        }
-
-        if (empty($tipinputdata['redcardshome'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
-        }
-
-        if (empty($tipinputdata['redcardsguest'])) {
-            $errorMessages[] = 'Keine oder falsche Eingabe.';
+        else {
+            $errorMessages[] = "Konnte Tipp nicht einspeichern." . $db->error;
         }
 
         // all conditions checked, lets create the account
@@ -98,7 +87,7 @@ class tipinput implements IController
 
     public function displayForm($spieleID)
     {
-        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = 1) AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$spieleID);
+        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$spieleID);
 
         if ($singleGameData) {
             $game = $singleGameData->fetch_assoc();
