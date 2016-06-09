@@ -8,6 +8,13 @@
 </p>
 <hr/>
 
+{if isset($message)}
+
+    <p style="width: 600px; text-align: center; margin: 0 auto;">
+        {$message}
+    </p>
+    <hr>
+{/if}
 <table class="posTibbTable" style="">
     <thead>
     <tr>
