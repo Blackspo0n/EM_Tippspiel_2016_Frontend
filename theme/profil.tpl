@@ -50,34 +50,34 @@
                     {$tipps.datumuhrzeit|date_format:"d. M Y H:i"}
                 </td>
                 <td>
-                    {$tipps.heimmannschafthz}
+                    {$tipps.tippheimhz}
                     :
-                    {$tipps.gastmannschafthz}
+                    {$tipps.tippgasthz}
                 </td>
                 <td>
-                    {$tipps.heimmannschaftende}
+                    {$tipps.tippheimende}
                     :
-                    {$tipps.gastmannschaftende}
+                    {$tipps.tippgastende}
                 </td>
                 <td>
-                    {$tipps.heimmannschaftverl}
-                    {IF $tipps.verlaengerung ne null}:{/IF}
-                    {$tipps.gastmannschaftverl}
-                </td>
-                <td>
-                    {$tipps.heimmannschaftelf}
-                    {IF $tipps.elfmeter ne null}:{/IF}
-                    {$tipps.gastmannschaftelf}
-                </td>
-                <td>
-                    {$tipps.gelbekartenheim}
+                    {$tipps.tippheimverl|default: "-"}
                     :
-                    {$tipps.gelbekartengast}
+                    {$tipps.tippgastverl|default: "-"}
                 </td>
                 <td>
-                    {$tipps.rotekartenheim}
+                    {$tipps.tippheimvelf|default: "-"}
                     :
-                    {$tipps.rotekartengast}
+                    {$tipps.tippgastvelf|default: "-"}
+                </td>
+                <td>
+                    {$tipps.tippgelbeheim}
+                    :
+                    {$tipps.tippgelbegast}
+                </td>
+                <td>
+                    {$tipps.tipproteheim}
+                    :
+                    {$tipps.tipprotegast}
                 </td>
             </tr>
         {/foreach}
