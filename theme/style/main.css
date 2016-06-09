@@ -164,11 +164,28 @@ div.footer {
     text-align: center;
 }
 
-.guidelines, .rankingTable, .gamesTable {
+.guidelines, .rankingTable, .gamesTable, .posTibbTable {
     margin: 0 auto;
     width: 800px;
     font-size: 18px;
 }
+
+.rankingTable thead th {
+    text-align: center;
+}
+.rankingTable tbody tr td:nth-last-child(1) {
+    text-align: center;
+}
+.rankingTable tbody tr td:nth-last-child(2) {
+    text-align: right;
+}
+.rankingTable tbody tr td:nth-last-child(3) {
+    text-align: left;
+}
+.rankingTable tbody tr td:nth-last-child(4) {
+    text-align: center;
+}
+
 .gamesTable tr td:nth-child(1) {
     width: 100px;
 }
@@ -189,6 +206,17 @@ div.footer {
     width: 80px;
 }
 
+.posTibbTable tbody tr td:nth-child(6) {
+    background-color: #f4f0f1;
+}
+
+.posTibbTable tbody tr td:nth-child(6) a {
+    text-decoration: none;
+}
+
+.NoneHover tbody tr:hover {
+
+}
 .tippTable {
     margin: 0 auto;
     width: 900px;
@@ -217,12 +245,12 @@ div.footer {
     text-align: left;
 }
 
-.guidelines tbody td, .rankingTable tbody td, .gamesTable tbody td {
+.guidelines tbody td, .rankingTable tbody td, .gamesTable tbody td, .posTibbTable tbody td {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
 }
 
-.rankingTable tbody tr:hover, .gamesTable tbody tr:hover {
+.rankingTable tbody tr:hover, .gamesTable tbody tr:hover, .posTibbTable tr:hover {
     background-color: #f4f0f1;
     color: black;
 }

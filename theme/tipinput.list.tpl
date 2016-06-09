@@ -8,7 +8,7 @@
 </p>
 <hr/>
 
-<table class="gamesTable" style="width:900px !important;    ">
+<table class="posTibbTable" style="">
     <thead>
     <tr>
         <th>
@@ -48,7 +48,7 @@
                 {IF strstr($grpPhase.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$grpPhase.gastmannschaft|default:"euFlag"}.png" />{/IF} {$grpPhase.gastmannschaft}
             </td>
             <td style="width: 130px !important; text-align: center;">
-                <a style="color: orangered; " href="index.php?module=tipinput&showform={$grpPhase.spieleid}">Tipp abgeben</a>
+                <a href="index.php?module=tipinput&showform={$grpPhase.spieleid}">Tipp abgeben</a>
             </td>
         </tr>
     {/foreach}

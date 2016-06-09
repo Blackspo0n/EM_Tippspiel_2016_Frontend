@@ -8,7 +8,7 @@
                 Platz
             </th>
             <th>
-                Nickname
+                Benutzer
             </th>
             <th>
                 Punkte
@@ -26,13 +26,13 @@
                     {$position.platz}
                 </td>
                 <td>
-                    {$position.nickname}
+                    {$position.benutzerName}
                 </td>
                 <td>
                     {$position.punkte}
                 </td>
                 <td>
-                    {IF $position.show_Email eq true}{$position.email}{ELSE} - {/IF}
+                    {IF $position.show_Email eq true}{$position.email}{ELSE} <i> - versteckt - </i> {/IF}
                 </td>
             </tr>
         {/foreach}

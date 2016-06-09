@@ -4,7 +4,7 @@
 
 <p></p>
 
-<table class="rankingTable">
+<table class="posTibbTable">
     <thead>
         <tr>
             <th>Spielbezeichnung</th>
