@@ -195,6 +195,10 @@ div.footer {
     border-right: 1px solid white;
 }
 
+.NoneHoverTable tbody tr td:nth-child(2) {
+    border-right: 0px;
+}
+
 .gamesTable tr td:nth-child(1) {
     width: 100px;
 }

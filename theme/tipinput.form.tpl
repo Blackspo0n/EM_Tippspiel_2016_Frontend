@@ -17,7 +17,7 @@
     <tbody>
         <tr>
             <td>{$singleGameData.spielbezeichnung}</td>
-            <td style="border-right: 0px;">
+            <td>
                 {IF strstr($singleGameData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleGameData.heimmannschaft}.png" />{/IF} {$singleGameData.heimmannschaft}
             </td>
             <td>
