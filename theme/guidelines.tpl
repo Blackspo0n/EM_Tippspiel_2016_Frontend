@@ -3,7 +3,7 @@
 <hr>
 <p class="dashbordP" style="margin-bottom: 20px">
     Hier erh&auml;lst du einen &uuml;berblick, auf was du alles tippen kannst und wie viele Punkte du mit deinen Tipps erhalten kannst. <br />
-    Bei einem exakten Tipp erhälst du die volle Punktzahl. <br />
+    Bei einem exakten Tipp erh&auml;lst du die volle Punktzahl. <br />
     Auch wenn nur die Tendenz richtig ist kannst du einige Punkte ergattern.<br />
     Die Punkte die du pro Spieltag erreicht hast werden zusammen gerechnet und zu deinem Gesamt-Punktestand hinzugef&uuml;gt.<br />
     In einem Ranking werden die Punktest&auml;nde aller Tipper ver&ouml;ffentlicht,<br />
