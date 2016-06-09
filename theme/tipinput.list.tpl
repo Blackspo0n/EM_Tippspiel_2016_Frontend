@@ -3,8 +3,8 @@
 <hr />
 
 <p style="width: 600px; text-align: center; margin: 0 auto;">
-    Hier hast du die Möglichkeit auf Spiele zu tippen die du noch nicht getippt hast.
-    Klicke dazu einfach auf ein angezeigtes Spiel in gebe auf der nächsten Seite deine Tippwerte ein.
+    Hier hast du die M&ouml;glichkeit auf Spiele zu tippen die du noch nicht getippt hast.
+    Klicke dazu einfach auf ein angezeigtes Spiel und gebe auf der n&auml;chsten Seite deine Tippwerte ein.
 </p>
 <hr/>
 
