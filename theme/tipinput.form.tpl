@@ -1,8 +1,5 @@
 <h2 class="headerguidelines">Tippabgabe</h2>
-
-<hr>
-
-<p></p>
+<hr />
 
 <table class="NoneHoverTable">
     <thead>

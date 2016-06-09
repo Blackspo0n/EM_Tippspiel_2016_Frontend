@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Mario
- * Date: 21.05.2016
- * Time: 18:39
+ *  @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
  */
 class Database
 {
@@ -12,17 +12,33 @@ class Database
      * @var mysqli
      */
     public $databaseLink;
+    /**
+     * @var bool
+     */
     private $hasSetConnectionInfo = false;
+    /**
+     * @var String
+     */
     public $user;
+    /**
+     * @var String
+     */
     public $host;
+    /**
+     * @var String
+     */
     public $password;
+    /**
+     * @var String
+     */
     public $database;
-    
-    public function __construct()
-    {
-        
-    }
 
+    /**
+     * @param $host
+     * @param $user
+     * @param $password
+     * @param $database
+     */
     public function setServerInformation($host, $user, $password, $database) {
         $this->host = $host;
         $this->user = $user;
@@ -32,6 +48,9 @@ class Database
 
     }
 
+    /**
+     * @throws Exception
+     */
     public function connectToDatabase() {
         if(!$this->hasSetConnectionInfo) {
             throw new Exception("server Informations hasnt been set");

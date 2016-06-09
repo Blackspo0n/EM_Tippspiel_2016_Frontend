@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: JMO
- * Date: 25.05.2016
- * Time: 11:00
+ * Class tipinput
  */
 class tipinput implements IController
 {
 
+    /**
+     *
+     */
     public function Run()
     {
         if(isset($_SESSION['userid'])) {
@@ -37,6 +37,9 @@ class tipinput implements IController
     }
 
 
+    /**
+     *
+     */
     public function gameData()
     {
         $db = Application::$database->databaseLink;
@@ -50,6 +53,12 @@ class tipinput implements IController
         Application::$smarty->assign('gameData', $gameData);
     }
 
+    /**
+     * @param array $tipinputdata
+     * @param $spieleid
+     * @param $benutzerid
+     * @return array|bool
+     */
     public function doCheckValidData(array $tipinputdata, $spieleid, $benutzerid)
     {
 
@@ -91,6 +100,9 @@ class tipinput implements IController
         return $errorMessages;
     }
 
+    /**
+     *
+     */
     public function displayList()
     {
         $this->gameData();
@@ -98,6 +110,9 @@ class tipinput implements IController
 
     }
 
+    /**
+     * @param $spieleID
+     */
     public function displayForm($spieleID)
     {
         $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$spieleID);

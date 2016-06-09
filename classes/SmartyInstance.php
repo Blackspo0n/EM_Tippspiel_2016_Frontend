@@ -26,14 +26,13 @@ class SmartyInstance
     private function __construct() {
         $this->smarty = new Smarty();
 
+        $this->smarty->registerResource('file', new EvaledFileResource());
         $this->smarty->setTemplateDir(ROOT_DIR . DS . 'theme');
         $this->smarty->compile_check = true;
         $this->smarty->force_compile = true;
         $this->smarty->setCompileDir(sys_get_temp_dir());
-        $this->smarty->registerResource('file', new EvaledFileResource());
 
         $this->smarty->assign("base", "/" . basename(ROOT_DIR));
-
     }
 
     static public function getInstance() {

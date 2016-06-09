@@ -1,13 +1,21 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Mario
- * Date: 25.05.2016
- * Time: 14:22
+ * Userhelper provide some useful function.
+ *
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
  */
 class UserHelper
 {
+    /**
+     * @param $user
+     * @param $password
+     * @param bool $remember
+     * @return bool
+     */
     public static function UserLogin($user, $password, $remember = false) {
         if($user === null || $password === null) {
             return false;
@@ -44,6 +52,9 @@ class UserHelper
         return true;
     }
 
+    /**
+     * @return bool
+     */
     public function AutoLogin() {
         $userId = base64_decode($_COOKIE["login"]);
 
@@ -62,6 +73,9 @@ class UserHelper
 
     }//function
 
+    /**
+     * @return bool
+     */
     public static function UserLogout() {
         if($_SESSION['userid']) {
             // invalidate token. It is easier than invalidate the cokies
@@ -73,6 +87,9 @@ class UserHelper
         return true;
     }
 
+    /**
+     * @return bool
+     */
     public static function isUserLogged() {
         if(!array_key_exists('logged', $_SESSION)) return false;
 

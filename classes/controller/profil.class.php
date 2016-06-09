@@ -1,7 +1,17 @@
 <?php
 
+/**
+ *
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
+ */
 class profil implements IController {
 
+    /**
+     *
+     */
     public function Run()
     {
         if (isset($_SESSION['userid'])) {
@@ -13,7 +23,7 @@ class profil implements IController {
                     $gamesArray[] = $row;
                 }
 
-                Application::$smarty->assign("TippArray", $gamesArray);
+                Application::$smarty->assign('TippArray', $gamesArray);
             }
 
             $resultSet = Application::$database->databaseLink->query("SELECT * FROM ranking WHERE benutzerid=" . $benutzerID . " ORDER BY datum DESC LIMIT 1");
@@ -21,7 +31,7 @@ class profil implements IController {
             if ($resultSet) {
                 $userRanking = $resultSet->fetch_assoc();
 
-                Application::$smarty->assign("UserRanking", $userRanking);
+                Application::$smarty->assign('UserRanking', $userRanking);
             }
 
             Application::$smarty->assign('contentfile', 'profil.tpl');

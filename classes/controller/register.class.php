@@ -6,11 +6,17 @@
  * This Controller provided the webpage for the user creation
  * and perform the write task to the database.
  *
- * @author Mario Kellner <mario.kellner@studmail.w-hs.de>
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
  * @version 1.0
  */
 class register implements IController
 {
+    /**
+     *
+     */
     public function Run()
     {
         if (array_key_exists('account', $_POST)) {
@@ -29,11 +35,17 @@ class register implements IController
         }
     }
 
+    /**
+     *
+     */
     public function RegisterSuccess()
     {
         Application::$smarty->assign('contentfile', 'register.success.tpl');
     }
 
+    /**
+     * @param array|null $formDefaults
+     */
     public function RegisterFormular(array $formDefaults = null)
     {
         Application::$smarty->assign('defaults', $formDefaults);
@@ -81,8 +93,7 @@ class register implements IController
             if ($accountdata['email'] !== $accountdata['emailrepeat']) {
                 $errorMessages[] = 'Die Passwörter stimmen nicht überein';
             }
-            unset($accountdata['emailrepeat']);
-            unset($accountdata['passwortrepeat']);
+            unset($accountdata['emailrepeat'], $accountdata['passwortrepeat']);
         }
 
         // all conditions checked, lets create the account
@@ -98,6 +109,10 @@ class register implements IController
     }
 
 
+    /**
+     * @param array $userdata
+     * @throws phpmailerException
+     */
     public function sendMail(array $userdata)
     {
         $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n" .
@@ -116,25 +131,25 @@ class register implements IController
     
         $mail->isSMTP();
         $mail->CharSet = 'utf-8';
-        $mail->SetLanguage("de");
+        $mail->setLanguage('de');
         $mail->Host = Config::$smtpSettings['host'];
         $mail->SMTPAuth = true;
         $mail->Username =  Config::$smtpSettings['user'];
         $mail->Password =  Config::$smtpSettings['password'];
         $mail->From     =  Config::$smtpSettings['email'];
-        $mail->FromName = Config::$smtpSettings['emailname'];
+        $mail->FromName =  Config::$smtpSettings['emailname'];
 
         //main
-        $mail->AddAddress($userdata['email'], $userdata['nickname']);
+        $mail->addAddress($userdata['email'], $userdata['nickname']);
         $mail->WordWrap = 50;
-        $mail->IsHTML(false);
-        $mail->Subject  =  "WHS Tippspiel - Registrierung";
+        $mail->isHTML(false);
+        $mail->Subject  = 'WHS Tippspiel - Registrierung';
         $mail->Body     =  $mailbody;
 
-        Application::$smarty->assign("sendEmail", true);
-        if(!$mail->Send()) {
-            Application::$smarty->assign("sendEmail", false);
-            Application::$smarty->assign("emailError", $mail->ErrorInfo);
+        Application::$smarty->assign('sendEmail', true);
+        if(!$mail->send()) {
+            Application::$smarty->assign('sendEmail', false);
+            Application::$smarty->assign('emailError', $mail->ErrorInfo);
         }
     }
 }

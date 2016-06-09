@@ -1,14 +1,18 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Chuckl0r
- * Date: 02.06.2016
- * Time: 14:31
+ *
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
  */
 class ranking implements IController
 {
 
+    /**
+     *
+     */
     public function Run()
     {
         $zeitResultSet = Application::$database->databaseLink->query("SELECT datum FROM ranking ORDER BY datum DESC LIMIT 1");

@@ -1,14 +1,17 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: JMO
- * Date: 25.05.2016
- * Time: 11:00
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
  */
 class games implements IController
 {
 
+    /**
+     *
+     */
     public function Run()
     {
         $resultSet = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spielbezeichnung LIKE '%Gruppe%'");

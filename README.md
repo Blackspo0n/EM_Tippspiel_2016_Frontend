@@ -15,7 +15,7 @@ Template Engine: smarty3.1.29
 
 ## Konfiguration
 
-Die Datei "_Config.tpl.php_" stellt die standard Konfiguration dar. Um das Frontend zu
+Die Datei "_Config.tpl.php_" stellt die Standard-Konfiguration dar. Um das Frontend zu
 nutzen, muss diese in "_Config.php_" umbenannt werden.
 
 ### Notwendige Konfiguration

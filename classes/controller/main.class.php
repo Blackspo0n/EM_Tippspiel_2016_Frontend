@@ -1,8 +1,19 @@
 <?php
 
+/**
+ * Class main
+ *
+ * @author Mario Kellner <mario.kellner@studmail.w-ha.de>
+ * @author Jan Markus Momper <jan-markus.momper@studmail.w-hs.de>
+ * @author Philipp Miller <philipp.miller@studmail.w-hs.de>
+ * @author Mark Friedrich <mark.friedrich@studmail.w-hs.de>
+ */
 class main implements IController {
 
-    public function Run() 
+    /**
+     *
+     */
+    public function Run()
     {
         $resultSet = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE gelbekartenheim IS NULL AND datumuhrzeit BETWEEN DATE_SUB(NOW(), INTERVAL 3 HOUR) AND NOW() ");
         $gamesArray = [];
