@@ -22,7 +22,6 @@ class tipinput implements IController
       if (isset($_POST['tipinput'])) {
             echo "mamaaa";
            $message =  $this->doCheckValidData($_POST['tipinput']);
-            var_dump($message);
             if ($message === true) {
                 Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!'); 
                 $this->displayList();
@@ -44,7 +43,7 @@ class tipinput implements IController
     {
         // $username = $smarty.session.username;
         $db = Application::$database->databaseLink;
-        $result = $db->query("SELECT * FROM spiele LIMIT 1");
+        $result = $db->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = 1) AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() ");
         
         $gameData = [];
         
@@ -107,12 +106,14 @@ class tipinput implements IController
     }
 
     public function displayForm ($spieleID) {
-        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid=". (int) $spieleID);        
+        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = 1) AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = ". (int) $spieleID);
+
         if ($singleGameData) {
             $game = $singleGameData->fetch_assoc();
             Application::$smarty->assign('singleGameData', $game);
             Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
         } else {
+            Application::$smarty->assign("message", "Das ausgewählte Spiel wurde entweder bereits getippt oder das Spiel wurde bereits gespielt.");
             $this->displayList();
         }
     }

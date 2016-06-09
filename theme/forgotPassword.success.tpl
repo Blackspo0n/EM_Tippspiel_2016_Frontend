@@ -1,5 +1,5 @@
 <h2 class="headerguidelines">Passwort zurücksetzen</h2>
-<hr>
+<hr />
 
 <p style="width: 600px; text-align: center; margin: 0 auto;">
     Du hast erfolgreich dein Passwort zurück gesetzt.
