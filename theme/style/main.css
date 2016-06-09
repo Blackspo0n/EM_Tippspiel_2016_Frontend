@@ -164,13 +164,13 @@ div.footer {
     text-align: center;
 }
 
-.guidelines, .rankingTable, .gamesTable, .posTibbTable {
+.guidelines, .rankingTable, .gamesTable, .posTibbTable, .NoneHoverTable {
     margin: 0 auto;
     width: 800px;
     font-size: 18px;
 }
 
-.rankingTable thead th {
+.rankingTable thead th, .NoneHoverTable thead th {
     text-align: center;
 }
 .rankingTable tbody tr td:nth-last-child(1) {
@@ -184,6 +184,15 @@ div.footer {
 }
 .rankingTable tbody tr td:nth-last-child(4) {
     text-align: center;
+}
+
+.NoneHoverTable thead th {
+    text-align: center;
+}
+.NoneHoverTable tbody tr td {
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
 }
 
 .gamesTable tr td:nth-child(1) {
@@ -214,9 +223,6 @@ div.footer {
     text-decoration: none;
 }
 
-.NoneHover tbody tr:hover {
-
-}
 .tippTable {
     margin: 0 auto;
     width: 900px;
