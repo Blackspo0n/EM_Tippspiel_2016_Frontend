@@ -15,7 +15,7 @@
     </p>
     <hr>
 {/if}
-<table class="posTibbTable" style="">
+<table class="posTippTable" style="">
     <thead>
     <tr>
         <th>

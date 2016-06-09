@@ -164,7 +164,7 @@ div.footer {
     text-align: center;
 }
 
-.guidelines, .rankingTable, .gamesTable, .posTibbTable, .NoneHoverTable {
+.guidelines, .rankingTable, .gamesTable, .posTippTable, .NoneHoverTable {
     margin: 0 auto;
     width: 800px;
     font-size: 18px;
@@ -219,11 +219,11 @@ div.footer {
     width: 80px;
 }
 
-.posTibbTable tbody tr td:nth-child(6) {
+.posTippTable tbody tr td:nth-child(6) {
     background-color: #f4f0f1;
 }
 
-.posTibbTable tbody tr td:nth-child(6) a {
+.posTippTable tbody tr td:nth-child(6) a {
     text-decoration: none;
 }
 
@@ -255,12 +255,12 @@ div.footer {
     text-align: left;
 }
 
-.guidelines tbody td, .rankingTable tbody td, .gamesTable tbody td, .posTibbTable tbody td {
+.guidelines tbody td, .rankingTable tbody td, .gamesTable tbody td, .posTippTable tbody td {
     border-right: 1px solid white;
     border-bottom: 1px solid white;
 }
 
-.rankingTable tbody tr:hover, .gamesTable tbody tr:hover, .posTibbTable tr:hover {
+.rankingTable tbody tr:hover, .gamesTable tbody tr:hover, .posTippTable tbody tr:hover {
     background-color: #f4f0f1;
     color: black;
 }

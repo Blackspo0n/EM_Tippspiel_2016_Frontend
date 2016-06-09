@@ -1,6 +1,12 @@
 <h2 style="text-align: center">Dein Profil</h2>
-<hr>
+<hr />
 
+{IF $UserRanking ne null}
+    <h3 class="h3Games">Dein Ranking</h3>
+    <p class="dashbordP">Du bit mit {$UserRanking.punkte} Punkt{IF $UserRanking.punkte ne 1}en{/IF} auf Platz {$UserRanking.platz} im gesamt Ranking.</p>
+
+    <hr />
+{/IF}
 <h3 class="h3Games">Deine Tipps</h3>
 <table class="tippTable">
     <thead style="height: 30px; vertical-align: top">

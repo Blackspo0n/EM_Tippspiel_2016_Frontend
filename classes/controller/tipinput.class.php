@@ -60,9 +60,12 @@ class tipinput implements IController
         $db = Application::$database->databaseLink; // because its shorter than Application::$database->databaseLink
 
         if((int)$tipinputdata['tippheimhz'] > (int)$tipinputdata['tippheimende'] || (int)$tipinputdata['tippgasthz'] > (int)$tipinputdata['tippgastende']) {
-
-            $errorMessages[] = "Tipp für die zweite Halbzeit kann nicht kleiner sein als der Tipp für die erste Halbzeit";
-            return $errorMessages;
+            if ((int)$tipinputdata['tippheimende'] > (int)$tipinputdata['tippheimverl'] || (int)$tipinputdata['tippgastende'] > (int)$tipinputdata['tippgastverl']) {
+                if ((int)$tipinputdata['tippheimverl'] > (int)$tipinputdata['tippheimelf'] || (int)$tipinputdata['tippgastverl'] > (int)$tipinputdata['tippgastelf']) {
+                    $errorMessages[] = "Tipp für die zweite Halbzeit kann nicht kleiner sein als der Tipp für die erste Halbzeit";
+                    return $errorMessages;
+                }
+            }
         }
 
         $sql = "INSERT INTO tipps (" . implode(',', array_keys($tipinputdata)) . ") VALUES (";

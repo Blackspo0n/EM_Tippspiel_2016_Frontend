@@ -16,6 +16,14 @@ class profil implements IController {
                 Application::$smarty->assign("TippArray", $gamesArray);
             }
 
+            $resultSet = Application::$database->databaseLink->query("SELECT * FROM ranking WHERE benutzerid=" . $benutzerID . " ORDER BY datum DESC LIMIT 1");
+            $userRanking = [];
+            if ($resultSet) {
+                $userRanking = $resultSet->fetch_assoc();
+
+                Application::$smarty->assign("UserRanking", $userRanking);
+            }
+
             Application::$smarty->assign('contentfile', 'profil.tpl');
         }
     }
