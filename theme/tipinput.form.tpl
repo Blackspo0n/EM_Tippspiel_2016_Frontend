@@ -85,9 +85,11 @@
                 <td align="center"><input type="number" id="homefirsthalf" name="tipinput[rotekartenheim]" /></td>
                 <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[rotekartengast]"></td>
             </tr>
+            <tr>
+                <td></td>
+                <td align="center" style="padding: 10px;"><input type="submit" value="Tipps Speichern"></td>
+                <td align="center"></td>
+            </tr>
         </tbody>
     </table>
-    <div class="btnLine">
-        <input type="submit" value="Tipps Speichern">
-    </div>
 </form>
