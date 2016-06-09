@@ -3,7 +3,7 @@
 
 <div class>
     {IF $SpieleArray ne NULL}
-        <h2 class="h2Dashboard">Laufende spiele</h2>
+        <h2 class="h2Dashboard">Laufende Spiele</h2>
         <div class="dashboardCurrentGamesDiv">
             <table>
                 {foreach from=$SpieleArray item=spiel}
