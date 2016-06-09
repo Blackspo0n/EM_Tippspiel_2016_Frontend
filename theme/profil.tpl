@@ -36,9 +36,9 @@
         {foreach from=$TippArray item=tipps}
             <tr>
                 <td>
-                    {IF strstr($tipps.heimmannschaft, " ", true) ne null}<img class="flags" src="../theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="../theme/img/flags/{$tipps.heimmannschaft}.png" />{/IF} {$tipps.heimmannschaft}
+                    {IF strstr($tipps.heimmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$tipps.heimmannschaft}.png" />{/IF} {$tipps.heimmannschaft}
                     :
-                    {IF strstr($tipps.gastmannschaft, " ", true) ne null}<img class="flags" src="../theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="../theme/img/flags/{$tipps.gastmannschaft}.png" />{/IF} {$tipps.gastmannschaft}
+                    {IF strstr($tipps.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$tipps.gastmannschaft}.png" />{/IF} {$tipps.gastmannschaft}
                 </td>
                 <td>
                     {$tipps.datumuhrzeit|date_format:"d. M Y H:i"}
