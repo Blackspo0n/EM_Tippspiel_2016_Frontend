@@ -34,17 +34,16 @@
         zu unserem EM-Tippspiel!<br />
 
         <br />
-        Sie sind fu&szlig;ballbegeistert und fiebern der EM genauso entgegen wie wir?
+        Du bist fu&szlig;ballbegeistert und fieberst der EM genauso entgegen wie wir?
         <br />
-        Sie m&ouml;chten nicht nur die Spiele mitverfolgen, sondern gleichzeitig noch Ihr Fu&szlig;ballfachwissen mit dem Wissen anderer Tipper messen?
+        Du m&ouml;chtest nicht nur die Spiele mitverfolgen, sondern gleichzeitig noch dein Fu&szlig;ballfachwissen mit dem Wissen anderer Tipper messen?
         <br />
-        Dann sind Sie bei UNS genau richtig!
+        Dann bist du bei uns genau richtig!
         <br />
-        Tippen Sie Spielereignisse und Ergebnisse der EM in Frankreich und zeigen Sie den anderen Tippern, wie viel Wissen in Ihnen steckt.
+        Tippe Spielereignisse und Ergebnisse der EM in Frankreich und zeige den anderen Tippern, wie viel Wissen in dir steckt.
 
-        <!--{$yolo}-->
         <br />
         <br />
-        Wir w&uuml;nschen Ihnen eine spannende und erfolgreiche EM und m&ouml;ge der Beste Tipper gewinnen!
+        Wir w&uuml;nschen dir eine spannende und erfolgreiche EM und m&ouml;ge der beste Tipper gewinnen!
     </p>
 </div>

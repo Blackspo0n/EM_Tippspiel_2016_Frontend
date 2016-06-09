@@ -2,7 +2,8 @@
 <html>
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="theme/img/favicon.ico">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+    <meta charset="ISO-8859-1"/>
     <title>EM 2016 - Tippspiel WHS</title>
     <link href="theme/style/main.css" rel="stylesheet" type="text/css"/>
 </head>

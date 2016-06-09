@@ -101,7 +101,7 @@ class register implements IController
     public function sendMail(array $userdata)
     {
         $mailbody = "Hallo " . $userdata['nickname'] . ",\n\n" .
-        "Vielen Dank für deine Registrierung für das Tippspiel der W-HS. \n" .
+        "vielen Dank für deine Registrierung für das Tippspiel der W-HS. \n" .
         "Anbei findest du noch alle deine wichtigen Nutzerdaten:\n\n" .
         "E-Mail Adresse: " . $userdata['email'] . "\n" .
         "Nickname (dein Loginname): " . $userdata['nickname'] . "\n" .

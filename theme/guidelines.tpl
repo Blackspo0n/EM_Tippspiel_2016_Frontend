@@ -2,15 +2,15 @@
 
 <hr>
 <p class="dashbordP" style="margin-bottom: 20px">
-    Hier erhalten Sie einen &uuml;berblick, auf was Sie alles tippen k&ouml;nnen und wie viele Punkte Sie mit Ihren Tipps erhalten k&ouml;nnen. <br />
-    F&uuml;r exakte Tipps bekommen Sie nat&uuml;rlich mehr Punkte, doch auch wenn nur die Tendenz richtig ist,<br />
-    k&ouml;nnen Sie eine ganze Menge Punkte sammeln. <br />
-    Die Punkte die Sie pro Spieltag erreicht haben werden zusammen gerechnet und zu Ihrem Gesamt-Punktestand addiert.<br />
+    Hier erh&auml;lst du einen &uuml;berblick, auf was du alles tippen kannst und wie viele Punkte du mit deinen Tipps erhalten kannst. <br />
+    Bei einem exakten Tipp erhälst du die volle Punktzahl. <br />
+    Auch wenn nur die Tendenz richtig ist kannst du einige Punkte ergattern.<br />
+    Die Punkte die du pro Spieltag erreicht hast werden zusammen gerechnet und zu deinem Gesamt-Punktestand hinzugef&uuml;gt.<br />
     In einem Ranking werden die Punktest&auml;nde aller Tipper ver&ouml;ffentlicht,<br />
-    somit k&ouml;nnen Sie jederzeit sehen wie viele Punkte Sie und Ihre Konkurrenz erzielt haben.<br />
+    somit kannst du jederzeit sehen wie viele Punkte du noch zum begehrten Platz 1 ben&ouml;tigst.<br />
     <br />
-    Wir w&uuml;nschen Ihnen viel Spa&szlig; und Erfolg beim tippen.
-    Ihr EM-Tippspiel Team
+    Wir w&uuml;nschen dir viel Spa&szlig; und Erfolg beim Tippen.
+    Ihr WHS-Tippspiel Team
 </p>
 <table class="guidelines">
 
