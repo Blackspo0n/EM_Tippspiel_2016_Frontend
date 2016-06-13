@@ -13,15 +13,15 @@
     </thead>
     <tbody>
     <tr>
-        <td>{$singleGameData.spielbezeichnung}</td>
+        <td>{$singleChangeData.spielbezeichnung}</td>
         <td>
-            {IF strstr($singleGameData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleGameData.heimmannschaft}.png" />{/IF} {$singleGameData.heimmannschaft}
+            {IF strstr($singleChangeData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.heimmannschaft}.png" />{/IF} {$singleChangeData.heimmannschaft}
         </td>
         <td>
-            {IF strstr($singleGameData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleGameData.gastmannschaft|default:"euFlag"}.png" />{/IF} {$singleGameData.gastmannschaft}
+            {IF strstr($singleChangeData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.gastmannschaft|default:"euFlag"}.png" />{/IF} {$singleChangeData.gastmannschaft}
         </td>
-        <td align="center">{$singleGameData.datumuhrzeit|date_format:'d. M Y H:i'}</td>
-        <td>{$singleGameData.spielort}</td>
+        <td align="center">{$singleChangeData.datumuhrzeit|date_format:'d. M Y H:i'}</td>
+        <td>{$singleChangeData.spielort}</td>
     </tr>
     </tbody>
 </table>
@@ -37,7 +37,7 @@
     <hr/>
 {/if}
 
-<form action="index.php?module=tipinput&showform={$singleGameData.spieleid}" method="post" class="tipinputForm">
+<form action="index.php?module=tipinput&showform={$singleChangeData.spieleid}" method="post" class="tipinputForm">
     <table style="width: 600px;">
         <thead>
         <tr>
@@ -49,43 +49,43 @@
         <tbody>
         <tr>
             <td>Tore nach Halbzeit</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimhz]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgasthz]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimhz]" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgasthz]"></td>
         </tr>
 
         <tr>
             <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "pe")}</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimende]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastende]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimende]" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastende]"></td>
         </tr>
 
-        {if strpos($singleGameData.spielbezeichnung, "ruppe ") eq false}
+        {if strpos($singleChangeData.spielbezeichnung, "ruppe ") eq false}
             <tr>
                 <td>Tore nach Verlängerung</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimverl]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastverl]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimverl]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastverl]"></td>
             </tr>
 
             <tr>
                 <td>Tore nach Elfmeter</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimelf]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastelf]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimelf]" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastelf]"></td>
             </tr>
         {/if}
 
         <tr>
             <td>Gelbe Karten</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippgelbeheim]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgelbegast]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippgelbeheim]" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgelbegast]"></td>
         </tr>
         <tr>
             <td>Rote Karten</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tipproteheim]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tipprotegast]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tipproteheim]" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tipprotegast]"></td>
         </tr>
         <tr>
             <td></td>
-            <td align="center" style="padding: 10px;"><input type="submit" value="Tipp abgeben"></td>
+            <td align="center" style="padding: 10px;"><input type="submit" value="Tipp ändern"></td>
             <td align="center"></td>
         </tr>
         </tbody>
