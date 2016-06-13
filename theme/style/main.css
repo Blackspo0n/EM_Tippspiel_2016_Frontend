@@ -251,6 +251,16 @@ div.footer {
     color: black;
 }
 
+.tippTable tbody tr td:nth-child(9) {
+    background-color: #f4f0f1;
+}
+
+.tippTable tbody tr td:nth-child(9) a{
+    text-decoration: none;
+}
+
+
+
 .guidelines th, .rankingTable th, .gamesTable th {
     text-align: left;
 }
