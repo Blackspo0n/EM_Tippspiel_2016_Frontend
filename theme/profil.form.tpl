@@ -15,7 +15,7 @@
     <tr>
         <td>{$singleChangeData.spielbezeichnung}</td>
         <td>
-            {IF strstr($singleChangeData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.heimmannschaft}.png" />{/IF} {$singleChangeData.heimmannschaft}
+            {IF strstr($singleChangeData.heimmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.heimmannschaft}.png" />{/IF} {$singleChangeData.heimmannschaft}
         </td>
         <td>
             {IF strstr($singleChangeData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.gastmannschaft|default:"euFlag"}.png" />{/IF} {$singleChangeData.gastmannschaft}
@@ -37,7 +37,7 @@
     <hr/>
 {/if}
 
-<form action="index.php?module=profil&showform={$singleChangeData.spieleid}" method="post" class="tipinputForm">
+<form action="index.php?module=profil&showform={$singleChangeData.spieleid}&tipp={$TippArray.tippid}" method="post" class="tipinputForm">
     <table style="width: 600px;">
         <thead>
         <tr>
@@ -49,39 +49,39 @@
         <tbody>
         <tr>
             <td>Tore nach Halbzeit</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimhz]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgasthz]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimhz]" value="{$TippArray.tippheimhz}" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgasthz]" value="{$TippArray.tippgasthz}" /></td>
         </tr>
 
         <tr>
             <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "pe")}</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimende]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastende]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimende]" value="{$TippArray.tippheimende}" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastende]" value="{$TippArray.tippgastende}" /></td>
         </tr>
 
         {if strpos($singleChangeData.spielbezeichnung, "ruppe ") eq false}
             <tr>
                 <td>Tore nach Verlängerung</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimverl]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastverl]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimverl]" value="{$TippArray.tippheimverl}" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastverl]" value="{$TippArray.tippgastverl}" /></td>
             </tr>
 
             <tr>
                 <td>Tore nach Elfmeter</td>
-                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimelf]" /></td>
-                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastelf]"></td>
+                <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimelf]" value="{$TippArray.tippheimelf}" /></td>
+                <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastelf]" value="{$TippArray.tippgastelf}" /></td>
             </tr>
         {/if}
 
         <tr>
             <td>Gelbe Karten</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippgelbeheim]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgelbegast]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippgelbeheim]" value="{$TippArray.tippgelbeheim}" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgelbegast]" value="{$TippArray.tippgelbegast}" /></td>
         </tr>
         <tr>
             <td>Rote Karten</td>
-            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tipproteheim]" /></td>
-            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tipprotegast]"></td>
+            <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tipproteheim]" value="{$TippArray.tipproteheim}" /></td>
+            <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tipprotegast]" value="{$TippArray.tipprotegast}" /></td>
         </tr>
         <tr>
             <td></td>

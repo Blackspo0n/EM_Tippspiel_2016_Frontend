@@ -17,10 +17,11 @@ class profil implements IController
     {
         if (isset($_SESSION['userid'])) {
             if (isset($_POST['tipchange'])) {
-                $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid = " . $_GET['showform']);
+
+                $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM tipps WHERE tippid = " . $_GET['tipp']);
 
                 if ($singleChangeData && $game = $singleChangeData->fetch_assoc()) {
-                    $message = $this->doCheckValidData($_POST['tipchange'], $_GET['showform'], $_SESSION['userid']);
+                    $message = $this->doCheckValidData($_POST['tipchange'], $_GET['showform'], $_SESSION['userid'], $_GET['tipp']);
                     if ($message === true) {
                         Application::$smarty->assign('message', 'Tipp erfolgreich abgegeben!');
                         $this->displayList();
@@ -31,29 +32,15 @@ class profil implements IController
                 } else {
                     $this->displayList();
                 }
-            } elseif (isset($_GET['showform'])) {
-                $this->displayForm($_GET['showform']);
+            } elseif (isset($_GET['showform']) && $_GET['showform'] !== "") {
+                if ($this->checkDateValidation($_GET['showform'])) {
+                    $this->displayForm($_GET['showform']);
+                } else {
+                    $this->displayList();
+                }
+
             } else {
-                $benutzerID = $_SESSION['userid'];
-                $resultSet = Application::$database->databaseLink->query("SELECT * FROM tipps AS T JOIN spiele AS S ON T.spieleid = S.spieleid WHERE benutzerid=" . $benutzerID);
-                $gamesArray = [];
-                if ($resultSet) {
-                    while ($row = $resultSet->fetch_assoc()) {
-                        $gamesArray[] = $row;
-                    }
-
-                    Application::$smarty->assign('TippArray', $gamesArray);
-                }
-
-                $resultSet = Application::$database->databaseLink->query("SELECT * FROM ranking WHERE benutzerid=" . $benutzerID . " ORDER BY datum DESC LIMIT 1");
-                $userRanking = [];
-                if ($resultSet) {
-                    $userRanking = $resultSet->fetch_assoc();
-
-                    Application::$smarty->assign('UserRanking', $userRanking);
-                }
-
-                Application::$smarty->assign('contentfile', 'profil.tpl');
+                $this->displayList();
             }
         }
     }
@@ -64,7 +51,7 @@ class profil implements IController
      * @param $benutzerid
      * @return array|bool
      */
-    public function doCheckValidData(array $tipchangedata, $spieleid, $benutzerid)
+    public function doCheckValidData(array $tipchangedata, $spieleid, $benutzerid, $tippid)
     {
 
         $errorMessages = [];
@@ -78,27 +65,22 @@ class profil implements IController
             return $errorMessages;
         }
 
-        $sql = "INSERT INTO tipps (" . implode(',', array_keys($tipchangedata)) . ") VALUES (";
+        if ($this->checkDateValidation($spieleid)) {
 
-        foreach ($tipchangedata as $key => &$value) {
-            if (empty($value)) {
-                $value = 0;
+            $sql = "UPDATE tipps SET tippheimhz=" . (int)$tipchangedata['tippheimhz'] . ", tippgasthz=" . (int)$tipchangedata['tippgasthz'] . ", tippheimende=" . (int)$tipchangedata['tippheimende'] . ", tippgastende=" . (int)$tipchangedata['tippgastende'] . ", tippheimverl=" . (int)$tipchangedata['tippheimverl'] . ", tippgastverl=" . (int)$tipchangedata['tippgastverl'] . ", tippheimelf=" . (int)$tipchangedata['tippheimelf'] . ", tippgastelf=" . (int)$tipchangedata['tippgastelf'] . ", tippgelbeheim=" . (int)$tipchangedata['tippgelbeheim'] . ", tippgelbegast=" . (int)$tipchangedata['tippgelbegast'] . ", tipproteheim=" . (int)$tipchangedata['tipproteheim'] . ", tipprotegast=" . (int)$tipchangedata['tipprotegast'] . " WHERE tippid=" . $tippid;
+
+            if ($db->query($sql)) {
+                return true;
+            } else {
+                $errorMessages[] = "Konnte Tipp nicht einspeichern." . $db->error;
             }
-        }
 
-        $sql .= implode(",", $tipchangedata);
-
-        $sql .= ")";
-
-        if ($db->query($sql)) {
-            return true;
+            // all conditions checked, lets create the account
+            if (count($errorMessages) === 0) {
+                return true;
+            }
         } else {
-            $errorMessages[] = "Konnte Tipp nicht einspeichern." . $db->error;
-        }
-
-        // all conditions checked, lets create the account
-        if (count($errorMessages) === 0) {
-            return true;
+            $errorMessages[] = "Dieses Spiel wurde bereits gespielt!";
         }
 
         return $errorMessages;
@@ -112,13 +94,50 @@ class profil implements IController
     {
         $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid = " . (int)$spieleID);
 
-        if ($singleChangeData && $game = $singleChangeData->fetch_assoc()) {
-
-            Application::$smarty->assign('$singleChangeData', $game);
+        $selectTipps = Application::$database->databaseLink->query("SELECT * FROM tipps AS t JOIN spiele AS s ON t.spieleid = s.spieleid WHERE t.benutzerid = " . (int)$_SESSION['userid'] . " AND t.tippid = " . (int)$_GET['tipp'] . " AND s.datumuhrzeit > NOW()");
+        if (($selectTipps && $tipp = $selectTipps->fetch_assoc()) && ($singleChangeData && $game = $singleChangeData->fetch_assoc())) {
+            Application::$smarty->assign('TippArray', $tipp);
+            Application::$smarty->assign('singleChangeData', $game);
             Application::$smarty->assign('contentfile', 'profil.form.tpl');
         } else {
             Application::$smarty->assign("error", "Das ausgewählte Spiel wurde bereits gespielt.");
             Application::$smarty->assign('contentfile', 'profil.tpl');
         }
+    }
+
+    /**
+     * @param $spieleID
+     * @return bool
+     */
+    public function checkDateValidation($spieleID) {
+        $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid = " . (int)$spieleID . " AND datumuhrzeit > NOW()");
+
+        if ($singleChangeData && $game = $singleChangeData->fetch_assoc()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function displayList() {
+        $benutzerID = $_SESSION['userid'];
+        $resultSet = Application::$database->databaseLink->query("SELECT * FROM tipps AS T JOIN spiele AS S ON T.spieleid = S.spieleid WHERE benutzerid=" . $benutzerID);
+        $gamesArray = [];
+        if ($resultSet) {
+            while ($row = $resultSet->fetch_assoc()) {
+                $row['editable'] = $this->checkDateValidation($row['spieleid']);
+                $gamesArray[] = $row;
+            }
+            Application::$smarty->assign('TippArray', $gamesArray);
+        }
+
+        $resultSet = Application::$database->databaseLink->query("SELECT * FROM ranking WHERE benutzerid=" . $benutzerID . " ORDER BY datum DESC LIMIT 1");
+        $userRanking = [];
+        if ($resultSet) {
+            $userRanking = $resultSet->fetch_assoc();
+            Application::$smarty->assign('UserRanking', $userRanking);
+        }
+
+        Application::$smarty->assign('contentfile', 'profil.tpl');
     }
 }

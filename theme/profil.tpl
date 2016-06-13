@@ -82,9 +82,9 @@
                 {$tipps.tippgastverl|default: "-"}
             </td>
             <td>
-                {$tipps.tippheimvelf|default: "-"}
+                {$tipps.tippheimelf|default: "-"}
                 :
-                {$tipps.tippgastvelf|default: "-"}
+                {$tipps.tippgastelf|default: "-"}
             </td>
             <td>
                 {$tipps.tippgelbeheim}
@@ -96,9 +96,11 @@
                 :
                 {$tipps.tipprotegast}
             </td>
-            <td style="width: 130px !important; text-align: center;">
-                <a href="index.php?module=profil&showform={$tipps.spieleid}">Tipp ändern</a>
-            </td>
+            {IF $tipps.editable}
+                <td style="width: 130px !important; text-align: center;">
+                    <a href="index.php?module=profil&showform={$tipps.spieleid}&tipp={$tipps.tippid}">Tipp &Auml;ndern</a>
+                </td>
+            {/IF}
 
         </tr>
     {/foreach}
