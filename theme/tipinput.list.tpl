@@ -36,7 +36,7 @@
             Mannschaften
         </th>
         <th>
-            Aktionen
+
         </th>
     </tr>
     </thead>

@@ -17,7 +17,7 @@ class profil implements IController
     {
         if (isset($_SESSION['userid'])) {
             if (isset($_POST['tipchange'])) {
-                $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid = " . (int)$spieleID);
+                $singleChangeData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid = " . $_GET['showform']);
 
                 if ($singleChangeData && $game = $singleChangeData->fetch_assoc()) {
                     $message = $this->doCheckValidData($_POST['tipchange'], $_GET['showform'], $_SESSION['userid']);
