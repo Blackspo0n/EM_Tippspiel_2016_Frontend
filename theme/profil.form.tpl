@@ -13,15 +13,15 @@
     </thead>
     <tbody>
     <tr>
-        <td>{$singleChangeData.spielbezeichnung}</td>
+        <td>{$TippArray.spielbezeichnung}</td>
         <td>
-            {IF strstr($singleChangeData.heimmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.heimmannschaft}.png" />{/IF} {$singleChangeData.heimmannschaft}
+            {IF strstr($TippArray.heimmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$TippArray.heimmannschaft}.png" />{/IF} {$TippArray.heimmannschaft}
         </td>
         <td>
-            {IF strstr($singleChangeData.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$singleChangeData.gastmannschaft|default:"euFlag"}.png" />{/IF} {$singleChangeData.gastmannschaft}
+            {IF strstr($TippArray.gastmannschaft, " ", true) ne null}<img class="flags" src="theme/img/flags/euFlag.png" />{ELSE}<img class="flags" src="theme/img/flags/{$TippArray.gastmannschaft|default:"euFlag"}.png" />{/IF} {$TippArray.gastmannschaft}
         </td>
-        <td align="center">{$singleChangeData.datumuhrzeit|date_format:'d. M Y H:i'}</td>
-        <td>{$singleChangeData.spielort}</td>
+        <td align="center">{$TippArray.datumuhrzeit|date_format:'d. M Y H:i'}</td>
+        <td>{$TippArray.spielort}</td>
     </tr>
     </tbody>
 </table>
@@ -37,7 +37,7 @@
     <hr/>
 {/if}
 
-<form action="index.php?module=profil&showform={$singleChangeData.spieleid}&tipp={$TippArray.tippid}" method="post" class="tipinputForm">
+<form action="index.php?module=profil&tipp={$TippArray.tippid}" method="post" class="tipinputForm">
     <table style="width: 600px;">
         <thead>
         <tr>
@@ -54,12 +54,12 @@
         </tr>
 
         <tr>
-            <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "pe")}</td>
+            <td>Tore nach 2. Halbzeit</td>
             <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimende]" value="{$TippArray.tippheimende}" /></td>
             <td align="center"><input type="number" id="guestfirsthalf" name="tipchange[tippgastende]" value="{$TippArray.tippgastende}" /></td>
         </tr>
 
-        {if strpos($singleChangeData.spielbezeichnung, "ruppe ") eq false}
+        {if strpos($TippArray.spielbezeichnung, "ruppe ") eq false}
             <tr>
                 <td>Tore nach Verlängerung</td>
                 <td align="center"><input type="number" id="homefirsthalf" name="tipchange[tippheimverl]" value="{$TippArray.tippheimverl}" /></td>

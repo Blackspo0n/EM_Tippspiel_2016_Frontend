@@ -54,7 +54,7 @@
             </tr>
 
             <tr>
-                <td>Tore nach 2. Halbzeit {strpos($singleGameData.spielbezeichnung, "pe")}</td>
+                <td>Tore nach 2. Halbzeit</td>
                 <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimende]" /></td>
                 <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastende]"></td>
             </tr>

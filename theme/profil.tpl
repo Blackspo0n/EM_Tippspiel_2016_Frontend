@@ -98,10 +98,20 @@
             </td>
             {IF $tipps.editable}
                 <td style="width: 130px !important; text-align: center;">
-                    <a href="index.php?module=profil&showform={$tipps.spieleid}&tipp={$tipps.tippid}">Tipp &Auml;ndern</a>
+                    <a href="index.php?module=profil&tipp={$tipps.tippid}">Tipp &Auml;ndern</a>
+                </td>
+            {else}
+                <td style="width: 130px !important; text-align: center;">
+
                 </td>
             {/IF}
 
+        </tr>
+    {foreachelse}
+        <tr>
+            <td style="width: 100% !important; text-align: center;" colspan="9">
+                Du hast noch keine Tipps abgegeben.
+            </td>
         </tr>
     {/foreach}
     </tbody>
