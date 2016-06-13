@@ -37,7 +37,7 @@
     <hr/>
 {/if}
 
-<form action="index.php?module=tipinput&showform={$singleChangeData.spieleid}" method="post" class="tipinputForm">
+<form action="index.php?module=profil&showform={$singleChangeData.spieleid}" method="post" class="tipinputForm">
     <table style="width: 600px;">
         <thead>
         <tr>
