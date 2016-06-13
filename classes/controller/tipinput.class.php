@@ -43,7 +43,7 @@ class tipinput implements IController
     public function gameData()
     {
         $db = Application::$database->databaseLink;
-        $result = $db->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() ");
+        $result = $db->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() ORDER BY datumuhrzeit");
 
         $gameData = [];
 

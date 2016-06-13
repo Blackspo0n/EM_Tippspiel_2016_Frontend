@@ -37,4 +37,21 @@ class profil implements IController {
             Application::$smarty->assign('contentfile', 'profil.tpl');
         }
     }
+
+    /**
+     * @param $spieleID
+     */
+    public function displayForm($spieleID)
+    {
+        $singleGameData = Application::$database->databaseLink->query("SELECT * FROM spiele WHERE spieleid NOT IN (SELECT spieleid FROM tipps WHERE benutzerid = " . $_SESSION['userid'] . ") AND heimmannschafthz IS NULL AND datumuhrzeit > NOW() AND spieleid = " . (int)$spieleID);
+
+        if ($singleGameData && $game = $singleGameData->fetch_assoc()) {
+
+            Application::$smarty->assign('singleGameData', $game);
+            Application::$smarty->assign('contentfile', 'tipinput.form.tpl');
+        } else {
+            Application::$smarty->assign("error", "Das ausgewählte Spiel wurde entweder bereits getippt oder das Spiel wurde bereits gespielt.");
+            $this->displayList();
+        }
+    }
 }
