@@ -101,9 +101,6 @@
                     <a href="index.php?module=profil&tipp={$tipps.tippid}">Tipp &Auml;ndern</a>
                 </td>
             {else}
-                <td style="width: 130px !important; text-align: center;">
-
-                </td>
             {/IF}
 
         </tr>
