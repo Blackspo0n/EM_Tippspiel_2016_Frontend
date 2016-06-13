@@ -7,6 +7,14 @@
         Platz {$UserRanking.platz} im Gesamt-Ranking.</p>
     <hr/>
 {/IF}
+
+{if isset($message)}
+    <div style="font-size: 18px; text-align: center; color: black; background: lightgreen;">
+        {$message}
+    </div>
+    <hr>
+{/if}
+
 <h3 class="h3Games">Deine Tipps</h3>
 <table class="tippTable">
     <thead style="height: 30px; vertical-align: top">
@@ -89,7 +97,7 @@
                 {$tipps.tipprotegast}
             </td>
             <td style="width: 130px !important; text-align: center;">
-                <a href="index.php?module=tipinput&showform={$grpPhase.spieleid}">Tipp ändern</a>
+                <a href="index.php?module=profil&showform={$tipps.spieleid}">Tipp ändern</a>
             </td>
 
         </tr>

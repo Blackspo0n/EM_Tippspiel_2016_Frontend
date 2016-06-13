@@ -1,4 +1,4 @@
-<h2 class="headerguidelines">Tippabgabe</h2>
+<h2 class="headerguidelines">Tippänderung</h2>
 <hr />
 
 <table class="NoneHoverTable">
