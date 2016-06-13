@@ -83,6 +83,12 @@ class register implements IController
         if (empty($accountdata['passwort'])) {
             $errorMessages[] = 'Kein Passwort angegeben.';
         }
+        if (!strpos($accountdata['email'], "@")) {
+            $errorMessages[] = 'Keine g&uuml;ltige Email angegeben.';
+        }
+        if (!strpos($accountdata['email'], ".")) {
+            $errorMessages[] = 'Keine g&uuml;ltige Email angegeben.';
+        }
 
         if (count($errorMessages) === 0) {
             if ($accountdata['passwort'] !== $accountdata['passwortrepeat']) {
