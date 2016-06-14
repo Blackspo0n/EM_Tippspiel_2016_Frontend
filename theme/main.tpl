@@ -36,14 +36,14 @@
         <br />
         Du bist fu&szlig;ballbegeistert und fieberst der EM genauso entgegen wie wir?
         <br />
-        Du m&ouml;chtest nicht nur die Spiele mitverfolgen, sondern gleichzeitig noch dein Fu&szlig;ballfachwissen mit dem Wissen anderer Tipper messen?
+        Du m&ouml;chtest nicht nur die Spiele mitverfolgen, sondern gleichzeitig noch Dein Fu&szlig;ballfachwissen mit dem Wissen anderer Tipper messen?
         <br />
-        Dann bist du bei uns genau richtig!
+        Dann bist Du bei uns genau richtig!
         <br />
-        Tippe Spielereignisse und Ergebnisse der EM in Frankreich und zeige den anderen Tippern, wie viel Wissen in dir steckt.
+        Tippe Spielereignisse und Ergebnisse der EM in Frankreich und zeige den anderen Tippern, wie viel Wissen in Dir steckt.
 
         <br />
         <br />
-        Wir w&uuml;nschen dir eine spannende und erfolgreiche EM und m&ouml;ge der beste Tipper gewinnen!
+        Wir w&uuml;nschen Dir eine spannende und erfolgreiche EM und m&ouml;ge der beste Tipper gewinnen!
     </p>
 </div>

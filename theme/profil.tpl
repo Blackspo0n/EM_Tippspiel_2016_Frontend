@@ -3,7 +3,7 @@
 
 {IF $UserRanking ne null}
     <h3 class="h3Games">Dein Ranking</h3>
-    <p class="dashbordP">Du bit mit {$UserRanking.punkte} Punkt{IF $UserRanking.punkte ne 1}en{/IF} auf
+    <p class="dashbordP">Du bist mit {$UserRanking.punkte} Punkt{IF $UserRanking.punkte ne 1}en{/IF} auf
         Platz {$UserRanking.platz} im Gesamt-Ranking.</p>
     <hr/>
 {/IF}

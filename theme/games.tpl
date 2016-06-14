@@ -1,4 +1,4 @@
-<h2 style="text-align: center">Ranking</h2>
+<h2 style="text-align: center">Spielplan</h2>
 
 <hr />
 

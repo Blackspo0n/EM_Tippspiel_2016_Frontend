@@ -2,5 +2,5 @@
 <hr>
 
 <p style="font-size: 18px; text-align: center">
-    Deine Zugangsdaten waren falsch. Bitte &uuml;berpr&uuml;fe deine Eingaben.
+    Deine Zugangsdaten waren falsch. Bitte &uuml;berpr&uuml;fe Deine Eingaben.
 </p>

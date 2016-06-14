@@ -39,7 +39,7 @@
             {$smarty.now|date_format:"%d.%m.%Y"}
         </div>
         <div id="midd">
-            Copyright JMO, MFR, MKE, PMI &copy; 2016 | Westf&auml;lische Hochschule | Standort Bocholt
+            Copyright JMO, MFR, MKE, PMI &copy; 2016 | Westf&auml;lische Hochschule | Standort Bocholt | M&uuml;nsterstra&szlig;e 265 | 46397 Bocholt
         </div>
     </div>
 </body>

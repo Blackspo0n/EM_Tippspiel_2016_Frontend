@@ -2,6 +2,6 @@
 <hr />
 
 <p style="width: 600px; text-align: center; margin: 0 auto;">
-    Du hast erfolgreich dein Passwort zur&uuml;ck gesetzt.
-    Du solltest in wenigen Minuten eine E-Mail mit deinem neuen Passwort erhalten.
+    Du hast erfolgreich Dein Passwort zur&uuml;ck gesetzt.
+    Du solltest in wenigen Minuten eine E-Mail mit Deinem neuen Passwort erhalten.
 </p>

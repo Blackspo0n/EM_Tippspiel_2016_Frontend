@@ -61,7 +61,7 @@
 
             {if strpos($singleGameData.spielbezeichnung, "ruppe ") eq false}
             <tr>
-                <td>Tore nach Verlängerung</td>
+                <td>Tore nach Verl&auml;ngerung</td>
                 <td align="center"><input type="number" id="homefirsthalf" name="tipinput[tippheimverl]" /></td>
                 <td align="center"><input type="number" id="guestfirsthalf" name="tipinput[tippgastverl]"></td>
             </tr>

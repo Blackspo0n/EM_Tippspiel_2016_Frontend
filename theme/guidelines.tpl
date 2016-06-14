@@ -2,15 +2,16 @@
 
 <hr>
 <p class="dashbordP" style="margin-bottom: 20px">
-    Hier erh&auml;lst du einen &uuml;berblick, auf was du alles tippen kannst und wie viele Punkte du mit deinen Tipps erhalten kannst. <br />
-    Bei einem exakten Tipp erh&auml;lst du die volle Punktzahl. <br />
-    Auch wenn nur die Tendenz richtig ist, kannst du einige Punkte ergattern.<br />
-    Die Punkte die du pro Spieltag erreicht hast werden zusammen gerechnet und zu deinem Gesamt-Punktestand hinzugef&uuml;gt.<br />
+    Hier erh&auml;lst Du einen &uuml;berblick, auf was Du alles tippen kannst und wie viele Punkte Du mit Deinen Tipps erhalten kannst. <br />
+    Bei einem exakten Tipp erh&auml;ltst Du die volle Punktzahl. <br />
+    Auch wenn nur die Tendenz richtig ist, kannst Du einige Punkte ergattern.<br />
+    Die Punkte, die Du pro Spieltag erreicht hast, werden zusammen gerechnet und zu Deinem Gesamt-Punktestand hinzugef&uuml;gt.<br />
     In einem Ranking werden die Punktest&auml;nde aller Tipper ver&ouml;ffentlicht,<br />
-    somit kannst du jederzeit sehen wie viele Punkte du noch zum begehrten Platz 1 ben&ouml;tigst.<br />
+    somit kannst Du jederzeit sehen, wie viele Punkte Du noch zum begehrten Platz 1 ben&ouml;tigst.
     <br />
-    Wir w&uuml;nschen dir viel Spa&szlig; und Erfolg beim Tippen.
-    Ihr WHS-Tippspiel Team
+    Wir w&uuml;nschen Dir viel Spa&szlig; und Erfolg beim Tippen.
+    <br />
+    Dein WHS-Tippspiel Team
 </p>
 <table class="guidelines">
 
@@ -23,7 +24,7 @@
 
     <tbody>
         <tr>
-        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+        <td>Exakte &Uuml;bereinstimmung zwischen getipptem
             und tats&auml;chlichen Halbzeitergebnis</td>
         <td>6</td>
         </tr>
@@ -36,7 +37,7 @@
         </tr>
 
         <tr>
-        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+        <td>Exakte &Uuml;bereinstimmung zwischen getipptem
             und tats&auml;chlichen Ergebnis nach regul&auml;rer
             Spielzeit
         </td>
@@ -54,7 +55,7 @@
         </tr>
 
         <tr>
-        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+        <td>Exakte &Uuml;bereinstimmung zwischen getipptem
             und tats&auml;chlichen Ergebnis nach Verl&auml;ngerung
         </td>
         <td>11
@@ -72,7 +73,7 @@
         </tr>
 
         <tr>
-        <td>Exakte &uuml;bereinstimmung zwischen getipptem
+        <td>Exakte &Uuml;bereinstimmung zwischen getipptem
             und tats&auml;chlichen Ergebnis nach
             Elfmeterschie&szlig;en
         </td>

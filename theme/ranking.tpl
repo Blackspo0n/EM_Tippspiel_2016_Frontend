@@ -8,6 +8,9 @@
                 Platz
             </th>
             <th>
+                Nickname
+            </th>
+            <th>
                 Benutzer
             </th>
             <th>
@@ -24,6 +27,9 @@
             <tr>
                 <td>
                     {$position.platz}
+                </td>
+                <td>
+                    {$position.nickname}
                 </td>
                 <td>
                     {$position.benutzerName}

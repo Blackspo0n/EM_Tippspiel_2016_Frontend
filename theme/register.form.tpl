@@ -2,7 +2,7 @@
 <hr>
 
 <p style="font-size: 18px; text-align: center">
-    Mit diesem Formular kannst du einen Benutzeraccount registrieren. <br />
+    Mit diesem Formular kannst Du einen Benutzeraccount registrieren. <br />
     Bitte gebe daf&uuml;r alle n&ouml;tigen Informationen an und dr&uuml;cke anschlie&szlig;end <br />
     auf "Registrieren".
 </p>

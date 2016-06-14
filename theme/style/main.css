@@ -173,16 +173,7 @@ div.footer {
 .rankingTable thead th, .NoneHoverTable thead th {
     text-align: center;
 }
-.rankingTable tbody tr td:nth-last-child(1) {
-    text-align: center;
-}
-.rankingTable tbody tr td:nth-last-child(2) {
-    text-align: right;
-}
-.rankingTable tbody tr td:nth-last-child(3) {
-    text-align: left;
-}
-.rankingTable tbody tr td:nth-last-child(4) {
+.rankingTable tbody tr td{
     text-align: center;
 }
 

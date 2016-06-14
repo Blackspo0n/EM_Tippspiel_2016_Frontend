@@ -2,8 +2,8 @@
 <hr />
 
 <p style="width: 600px; text-align: center; margin: 0 auto;">
-    Hier hast du die M&ouml;glichkeit dein Passwort auf ein zuf&auml;llig generiertes Passwort zur&uuml;ck zu setzen.
-    Gebe hier zu einfach deine E-Mail Adresse an. Sofern die E-Mail bekannt ist wird das neu generierte Passwort
+    Hier hast du die M&ouml;glichkeit Dein Passwort auf ein zuf&auml;llig generiertes Passwort zur&uuml;ck zu setzen.
+    Gebe hierzu einfach Deine E-Mail Adresse an. Sofern die E-Mail bekannt ist, wird das neu generierte Passwort
     an diese E-Mail geschickt.
 </p>
 
