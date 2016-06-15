@@ -22,7 +22,7 @@ class Config
         'user' => 'whstippspiel@web.de',
         'email' => 'whstippspiel@web.de',
         'emailname' => 'WHS Tippspiel',
-        'password' => 'Tdrl85_6',
+        'password' => '***',
     ];
 }
 

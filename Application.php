@@ -104,7 +104,6 @@ class Application
      * Flush tells this class that everything should be outputed to the browser
      */
     public static function Flush() {
-
         self::$smarty->display('index.tpl');
     }
 }
