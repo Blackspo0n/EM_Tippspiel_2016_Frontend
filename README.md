@@ -2,6 +2,9 @@
 
 Dies ist das Repository für die freiwillige Projektarbeit im Fach GWI1.
 
+## Code ist nicht represetativ
+Dieser Code wurde in Zusammenarbeit mit Authoren unten erstellt. Um die Zusammenarbeit zu erleichtern wurde bewusst der Code sehr einfach gehalten. Dementsprechend wird sich nicht an dem Standard in der PHP-Community gehalten.
+
 ## Autoren
 Mario Kellner - mario.kellner@studmail.w-hs.de
 Jan Markus Momper - jan-markus.momper@studmail.w-hs.de
