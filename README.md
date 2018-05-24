@@ -2,7 +2,7 @@
 
 Dies ist das Repository für die freiwillige Projektarbeit im Fach GWI1.
 
-## Code ist nicht represetativ
+## Code ist nicht representativ
 Dieser Code wurde in Zusammenarbeit mit Authoren unten erstellt. Um die Zusammenarbeit zu erleichtern wurde bewusst der Code sehr einfach gehalten. Dementsprechend wird sich nicht an dem Standard in der PHP-Community gehalten.
 
 ## Autoren
